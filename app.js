@@ -1,4 +1,4 @@
-//NPM packages
+//NPM PACKAGES
 const express = require('express');
 const mongoose = require ('mongoose');
 const passport =  require("passport");
@@ -6,30 +6,47 @@ const bodyParser = require ('body-parser');
 const twig  = require('twig');
 const app = express();
 
-// lets import our model
+// IMPORT OUR MODEL
 const User = require("./models/user");
 const Post = require('./models/post'); 
 
-//we're setting up the strategy to provide security
+// SETTING UP THE STRATEGY TO PRIVIDE SECURITY
 const LocalStrategy =  require("passport-local");
 
-// set the view engine
+//simplifies the integration between Mongoose and Passport for local authentication
+const passportLocalMongoose =  require("passport-local-mongoose");
+
+// SET THE VIEW ENGINE
 app.set('view engine', 'html');
 app.engine('html', twig.__express);
 app.set('views','views');
 
+// MONGO DATABASE URL
 const MONGODB_URL = 'mongodb+srv://test:test123@cluster0.8tyse.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-
-
+mongoose.connect(MONGODB_URL, { useUnifiedTopology: true });
  
-//we need to make the public accessible to our backend application (images,styling)
+// PUBLIC ACCESIBLE TO OUR BACKEND APPLICATION
 app.use(express.static(__dirname + '/public'));
 
-// Use body parser
+// USE BODY PASRSER
 app.use(bodyParser.urlencoded({extended:false}));
 
+app.use(require("express-session")({
+    secret:"any normal word", //decode or encode session, this is used to compute the hash.
+    resave: false,              //What this does is tell the session store that a particular session is still active, in the browser
+    saveUninitialized:false    //the session cookie will not be set on the browser unless the session is modified
+}));
 
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser()); 
+passport.use(new LocalStrategy(User.authenticate()));
 
+// BIDYPARSER TO RETURN INFORMATION TO OUR DATABASE
+app.use(bodyParser.urlencoded({ extended:true }))
+app.use(passport.initialize());
+app.use(passport.session());
+
+// START OUR SERVER
 mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
     .then((result) => {
         app.listen(3010);
@@ -48,6 +65,9 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
     app.get("/login", (req,res) =>{
         res.render("login")
     })
+    app.get("/dashboard", (req,res) =>{
+        res.render("dashboard")
+    })
     app.get("/list", (req,res) =>{
         res.render("list")
     })
@@ -58,3 +78,39 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
         res.render("account")
     })
     
+// REGISTER A NEW USER
+app.post("/register",(req,res)=>{ 
+    User.register(new User({            //passport-local-mongoose function to register a new user
+    	username: req.body.username,
+    	email:req.body.email,
+    	}),
+    	req.body.password,function(err,user){
+        if(err){
+            console.log(err);
+        }
+        passport.authenticate("local")(req,res,function(){ // authenticate the local session and redirect to login page
+            console.log(req);
+            res.redirect("/login");
+        })    
+    })
+
+});
+
+// SET UP THE FUNCTIONALITY FOR LOGGING AN EXISTING USER
+app.post("/login", passport.authenticate("local",{
+    successRedirect:"/dashboard",
+    failureRedirect:"/login"
+})
+);
+
+// LOGOUT 
+app.get("/logout",(req,res)=>{  // logout function
+    req.logout();
+    res.redirect("/");
+});
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) 
+                return next();
+            res.redirect('/');     
+}
