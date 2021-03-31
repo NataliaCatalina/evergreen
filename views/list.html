@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- custom CSS file -->
     <link rel="stylesheet" href="../style.css">
-    <title>Document</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!-- google fonts -->
+    <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Poppins">
+    <title>List an Item</title>
 </head>
 <body>
     <nav>
@@ -17,11 +23,11 @@
         </ul>
       </nav>
 
-      <H1>list a plant for sale</H1>
+      <!-- <H1>List an item</H1> -->
 
-      <p>Enter your details</p>
+      <!-- <p>Enter your details</p> -->
     
-      <div class="container">
+      <!-- <div class="container">
         <div class="row">
            <div class="col ">
               <div class="insert_post">
@@ -42,7 +48,7 @@
                     <h4>Care</h4>
                     <div class="dropdown mt-5">  
                       <button type="button" class="dropbtn" data-toggle="dropdown">  
-                        <img src="https://img.icons8.com/pastel-glyph/32/000000/windy-weather.png"/>
+                        <i class="fas fa-ruler fa-lg"></i>
                       </button>  
                       <div class="dropdown-menu">  
                           <a class="dropdown-item" href="#"> 1 </a>  
@@ -51,14 +57,39 @@
                           <a class="dropdown-item" href="#"> 4 </a>  
                       </div>  
                   </div> 
-    
-                  <label for="cars"><img src="https://img.icons8.com/pastel-glyph/32/000000/windy-weather.png"/></label>
-                    <select name="cars" id="cars">
-                      <option value="volvo">1</option>
-                      <option value="saab">2</option>
-                      <option value="opel">3</option>
-                      <option value="audi">4</option>
-                    </select>
+                  <div class="dropdown mt-5">  
+                    <button type="button" class="dropbtn" data-toggle="dropdown">  
+                      <i class="fas fa-tint fa-lg"></i>
+                    </button>  
+                    <div class="dropdown-menu">  
+                        <a class="dropdown-item" href="#"> 1 </a>  
+                        <a class="dropdown-item" href="#"> 2 </a>  
+                        <a class="dropdown-item" href="#"> 3 </a>  
+                        <a class="dropdown-item" href="#"> 4 </a>  
+                    </div>  
+                </div> 
+                <div class="dropdown mt-5">  
+                  <button type="button" class="dropbtn" data-toggle="dropdown">  
+                    <i class="fas fa-cloud-sun fa-lg"></i>
+                  </button>  
+                  <div class="dropdown-menu">  
+                      <a class="dropdown-item" href="#"> 1 </a>  
+                      <a class="dropdown-item" href="#"> 2 </a>  
+                      <a class="dropdown-item" href="#"> 3 </a>  
+                      <a class="dropdown-item" href="#"> 4 </a>  
+                  </div>  
+              </div> 
+              <div class="dropdown mt-5">  
+                <button type="button" class="dropbtn" data-toggle="dropdown">  
+                  <i class="fas fa-thermometer-half fa-lg"></i>
+                </button>  
+                <div class="dropdown-menu">  
+                    <a class="dropdown-item" href="#"> 1 </a>  
+                    <a class="dropdown-item" href="#"> 2 </a>  
+                    <a class="dropdown-item" href="#"> 3 </a>  
+                    <a class="dropdown-item" href="#"> 4 </a>  
+                </div>  
+            </div> 
     
     
     
@@ -81,15 +112,133 @@
                       </div>
                     </div>
     
-                    <input type="submit" value="POST">   
+                    <input class="submit text-center" type="submit" value="Create">   
                    
                  </form>
              </div>
            </div>
         </div>
-     </div>
+     </div> -->
+
+
+
+    <div class="container">
+      <div class="row">
+        <div class="insert_post">
+          <form action="" method="POST">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+            <H1>List an item</H1>
+            <label for="plant_name">Plant Name</label><br>
+            <input type="text" name="plant_name" placeholder="Enter plant name" id="plant_name" required><br>
+            <label for="description">Description</label><br>
+            <textarea name="content" id="description" required></textarea><br>
+            <label for="price">Price</label><br>
+            <input type="text" name="price" placeholder="Enter price" id="price" required><br>
+                     
+          
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+          <div class="container tradebtns">
+            <div class="row">
+              <div class="col text-center">
+                <label for="Sell">Sell $</label><br>
+                <input type="checkbox" class="checkbox-round" name="Sell" id="Sell">
+              </div>
+              <div class="col text-center">
+                <label for="Trade">Trade</label><br>
+                <input type="checkbox" class="checkbox-round" name="Trade" id="Trade">
+
+              </div>
+
+
+
+              <div class="col text-center">
+                <label for="Both">Both</label><br>
+                <input type="checkbox" class="checkbox-round" name="Both" id="Both">
+
+              </div>
+            </div>
+          </div>
+          <div class="submitbtn">
+          <input class="submit text-center" type="submit" value="Create">   
+          </div>
+        </div>
+
+
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+          <h4>Category</h4>
+                    <input type="checkbox" class="hidden" name="Indoor" id="Indoor"><label for="Indoor">Indoor</label><input type="checkbox" class="hidden" name="Outdoor" id="Outdoor"><label for="Outdoor">Outdoor</label><input type="checkbox" class="hidden" name="Ferns" id="Ferns"><label for="Ferns">Ferns</label><br>
+                    <input type="checkbox" class="hidden" name="Trees" id="Trees"><label for="Trees">Trees</label><input type="checkbox" class="hidden" name="Tropical" id="Tropical"><label for="Tropical">Tropical</label><input type="checkbox" class="hidden" name="Cacti" id="Cacti"><label for="Cacti">Cacti</label><br>
     
+                    <h4>Care</h4>
+                    <div class="dropdown mt-5">  
+                      <button type="button" class="dropbtn" data-toggle="dropdown">  
+                        <i class="fas fa-ruler fa-lg"></i>
+                      </button>  
+                      <div class="dropdown-menu">  
+                          <a class="dropdown-item" href="#"> 1 </a>  
+                          <a class="dropdown-item" href="#"> 2 </a>  
+                          <a class="dropdown-item" href="#"> 3 </a>  
+                          <a class="dropdown-item" href="#"> 4 </a>  
+                      </div>  
+                  </div> 
+                  <div class="dropdown mt-5">  
+                    <button type="button" class="dropbtn" data-toggle="dropdown">  
+                      <i class="fas fa-tint fa-lg"></i>
+                    </button>  
+                    <div class="dropdown-menu">  
+                        <a class="dropdown-item" href="#"> 1 </a>  
+                        <a class="dropdown-item" href="#"> 2 </a>  
+                        <a class="dropdown-item" href="#"> 3 </a>  
+                        <a class="dropdown-item" href="#"> 4 </a>  
+                    </div>  
+                </div> 
+                <div class="dropdown mt-5">  
+                  <button type="button" class="dropbtn" data-toggle="dropdown">  
+                    <i class="fas fa-cloud-sun fa-lg"></i>
+                  </button>  
+                  <div class="dropdown-menu">  
+                      <a class="dropdown-item" href="#"> 1 </a>  
+                      <a class="dropdown-item" href="#"> 2 </a>  
+                      <a class="dropdown-item" href="#"> 3 </a>  
+                      <a class="dropdown-item" href="#"> 4 </a>  
+                  </div>  
+              </div> 
+              <div class="dropdown mt-5">  
+                <button type="button" class="dropbtn" data-toggle="dropdown">  
+                  <i class="fas fa-thermometer-half fa-lg"></i>
+                </button>  
+                <div class="dropdown-menu">  
+                    <a class="dropdown-item" href="#"> 1 </a>  
+                    <a class="dropdown-item" href="#"> 2 </a>  
+                    <a class="dropdown-item" href="#"> 3 </a>  
+                    <a class="dropdown-item" href="#"> 4 </a>  
+                </div>  
+            </div> 
+            <label for="author_name">Image Link</label><br>
+                    <input type="text" name="image_link" placeholder="Enter an image link" id="image_link" required><br>
+                    
+          
+        </div>
+      </div>
+      </form>
+      </div>
+    </div>
+    </div>
     
+
+
+
+
+
+
+    <!-- <div class="container">
+      <div class="row">
+
+
+      </div>
+    </div> -->
 
 
 
