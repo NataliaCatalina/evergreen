@@ -49,7 +49,7 @@ app.use(passport.session());
 // START OUR SERVER
 mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
     .then((result) => {
-        app.listen(3010);
+        app.listen(3011);
         console.log('database is connected');
         
     }).catch((err) => {
