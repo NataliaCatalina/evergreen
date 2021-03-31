@@ -1,35 +1,128 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-}
-
-
-body {
-  background-color: blue;
-}
-
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 1px solid #e7e7e7;
-    background-color: #f3f3f3;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: #666;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  li a:hover:not(.active) {
-    background-color: #ddd;
-  }
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+
+
+
+
+/* CATEGORIES */
+
+.hidden {position:absolute;visibility:hidden;opacity:0;}
+input[type=checkbox] + label {
+color: black;
+font-style: italic;
+border: 2px solid #77D0D6;
+padding-left: 10px;
+padding-right: 10px;
+border-radius: 15px;
+background-color: #DEFFEF;
+} 
+input[type=checkbox]:checked + label {
+color: black;
+font-style: normal;
+border: 2px solid #DEFFEF;
+padding-left: 10px;
+padding-right: 10px;
+border-radius: 15px;
+background-color: #77D0D6;
+}
+
+
+
+
+/* SELL TRADE BOTH */
+
+.checkbox-round {
+width: 1.3em;
+height: 1.3em;
+background-color: #77D0D6;
+border-radius: 50%;
+vertical-align: middle;
+border: 1px solid #77D0D6;
+-webkit-appearance: none;
+outline: none;
+cursor: pointer;
+}
+
+.checkbox-round:checked {
+background-color: #DEFFEF;
+}
+
+#plant_name, #description, #price, #image_link {
+outline: 0;
+border-width: 0 0 1px;
+border-color: black;
+}
+
+
+
+
+
+/* Dropdown Button */
+.dropbtn {
+background-color: #4CAF50;
+color: white;
+padding: 16px;
+font-size: 16px;
+border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+/* This align the icon to the right */
+#icon{
+  align-items: right;
+}
