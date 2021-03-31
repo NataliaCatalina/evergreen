@@ -82,7 +82,8 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
 app.post("/register",(req,res)=>{ 
     User.register(new User({            //passport-local-mongoose function to register a new user
     	username: req.body.username,
-    	email:req.body.email,
+        email:req.body.email,
+        
     	}),
     	req.body.password,function(err,user){
         if(err){
@@ -93,7 +94,6 @@ app.post("/register",(req,res)=>{
             res.redirect("/login");
         })    
     })
-
 });
 
 // SET UP THE FUNCTIONALITY FOR LOGGING AN EXISTING USER
