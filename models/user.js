@@ -6,7 +6,7 @@ const UserSchema = new mongoose.Schema({
     password:String,
     phone:Number,
     email:String
-}) ;
+});
 
 //add a hash and salt field to our Schema in order to store the hashed password and the salt value.
 UserSchema.plugin(passportLocalMongoose); 

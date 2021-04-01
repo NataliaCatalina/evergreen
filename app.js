@@ -23,6 +23,7 @@ app.set('views','views');
 
 // MONGO DATABASE URL
 const MONGODB_URL = 'mongodb+srv://test:test123@cluster0.8tyse.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+
 mongoose.connect(MONGODB_URL, { useUnifiedTopology: true });
  
 // PUBLIC ACCESIBLE TO OUR BACKEND APPLICATION
@@ -49,7 +50,7 @@ app.use(passport.session());
 // START OUR SERVER
 mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
     .then((result) => {
-        app.listen(3011);
+        app.listen(3000);
         console.log('database is connected');
         
     }).catch((err) => {
@@ -79,10 +80,11 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
     })
     
 // REGISTER A NEW USER
-app.post("/register",(req,res)=>{ 
+app.post("/signup",(req,res)=>{ 
     User.register(new User({            //passport-local-mongoose function to register a new user
     	username: req.body.username,
         email:req.body.email,
+        phone:req.body.phone,
         
     	}),
     	req.body.password,function(err,user){
