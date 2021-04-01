@@ -4,175 +4,140 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+      <!-- Google font -->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,300&display=swap" rel="stylesheet">
+      <!-- font-awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
       <link rel="stylesheet" href="../style.css">
-    <!-- font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
-    <title>List</title>
-</head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li style="float:right"><a href="/login">Login</a></li>
-            <li style="float:right"><a href="/signup">Sign Up</a></li>
-        </ul>
-      </nav>
+      <title>List</title>
+  </head>
 
-      <!-- <H1>List an item</H1> -->
+  <body>
 
-      <!-- <p>Enter your details</p> -->
-    
-      <!-- <div class="container">
-        <div class="row">
-           <div class="col ">
-              <div class="insert_post">
-                 <form action="" method="POST">
-                     <label for="plant_name">Plant Name</label><br>
-                     <input type="text" name="plant_name" placeholder="Enter plant name" id="plant_name" required><br>
-                     <label for="description">Description</label><br>
-                     <textarea name="content" id="description" placeholder="Write something..." required></textarea><br>
-                     <label for="price">Price</label><br>
-                     <input type="text" name="price" placeholder="Enter price" id="price" required><br>
-                     <label for="author_name">Image Link</label><br>
-                    <input type="text" name="image_link" placeholder="Enter an image link" id="image_link" required><br>
-                    
-                    <h4>Category</h4>
-                    <input type="checkbox" class="hidden" name="Indoor" id="Indoor"><label for="Indoor">Indoor</label><input type="checkbox" class="hidden" name="Outdoor" id="Outdoor"><label for="Outdoor">Outdoor</label><input type="checkbox" class="hidden" name="Ferns" id="Ferns"><label for="Ferns">Ferns</label><br>
-                    <input type="checkbox" class="hidden" name="Trees" id="Trees"><label for="Trees">Trees</label><input type="checkbox" class="hidden" name="Tropical" id="Tropical"><label for="Tropical">Tropical</label><input type="checkbox" class="hidden" name="Cacti" id="Cacti"><label for="Cacti">Cacti</label><br>
-    
-                    <h4>Care</h4>
-                    <div class="dropdown mt-5">  
-                      <button type="button" class="dropbtn" data-toggle="dropdown">  
-                        <i class="fas fa-ruler fa-lg"></i>
-                      </button>  
-                      <div class="dropdown-menu">  
-                          <a class="dropdown-item" href="#"> 1 </a>  
-                          <a class="dropdown-item" href="#"> 2 </a>  
-                          <a class="dropdown-item" href="#"> 3 </a>  
-                          <a class="dropdown-item" href="#"> 4 </a>  
-                      </div>  
-                  </div> 
-                  <div class="dropdown mt-5">  
-                    <button type="button" class="dropbtn" data-toggle="dropdown">  
-                      <i class="fas fa-tint fa-lg"></i>
-                    </button>  
-                    <div class="dropdown-menu">  
-                        <a class="dropdown-item" href="#"> 1 </a>  
-                        <a class="dropdown-item" href="#"> 2 </a>  
-                        <a class="dropdown-item" href="#"> 3 </a>  
-                        <a class="dropdown-item" href="#"> 4 </a>  
-                    </div>  
-                </div> 
-                <div class="dropdown mt-5">  
-                  <button type="button" class="dropbtn" data-toggle="dropdown">  
-                    <i class="fas fa-cloud-sun fa-lg"></i>
-                  </button>  
-                  <div class="dropdown-menu">  
-                      <a class="dropdown-item" href="#"> 1 </a>  
-                      <a class="dropdown-item" href="#"> 2 </a>  
-                      <a class="dropdown-item" href="#"> 3 </a>  
-                      <a class="dropdown-item" href="#"> 4 </a>  
-                  </div>  
-              </div> 
-              <div class="dropdown mt-5">  
-                <button type="button" class="dropbtn" data-toggle="dropdown">  
-                  <i class="fas fa-thermometer-half fa-lg"></i>
-                </button>  
-                <div class="dropdown-menu">  
-                    <a class="dropdown-item" href="#"> 1 </a>  
-                    <a class="dropdown-item" href="#"> 2 </a>  
-                    <a class="dropdown-item" href="#"> 3 </a>  
-                    <a class="dropdown-item" href="#"> 4 </a>  
-                </div>  
-            </div> 
-    
-    
-    
-                    <div class="container">
-                      <div class="row">
-                        <div class="col text-center">
-                          <label for="Sell">Sell $</label><br>
-                          <input type="checkbox" class="checkbox-round" name="Sell" id="Sell">
-                        </div>
-                        <div class="col text-center">
-                          <label for="Trade">Trade</label><br>
-                          <input type="checkbox" class="checkbox-round" name="Trade" id="Trade">
-    
-                        </div>
-                        <div class="col text-center">
-                          <label for="Both">Both</label><br>
-                          <input type="checkbox" class="checkbox-round" name="Both" id="Both">
-    
-                        </div>
-                      </div>
-                    </div>
-    
-                    <input class="submit text-center" type="submit" value="Create">   
-                   
-                 </form>
-             </div>
-           </div>
-        </div>
-     </div> -->
-
-
-
-    <div class="container">
-      <div class="row">
-        <div class="insert_post">
-          <form action="" method="POST">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-            <H1>List an item</H1>
-            <label for="plant_name">Plant Name</label><br>
-            <input type="text" name="plant_name" placeholder="Enter plant name" id="plant_name" required><br>
-            <label for="description">Description</label><br>
-            <textarea name="content" id="description" required></textarea><br>
-            <label for="price">Price</label><br>
-            <input type="text" name="price" placeholder="Enter price" id="price" required><br>
-                     
-          
-        </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-          <div class="container tradebtns">
-            <div class="row">
-              <div class="col text-center">
-                <label for="Sell">Sell $</label><br>
-                <input type="checkbox" class="checkbox-round" name="Sell" id="Sell">
-              </div>
-              <div class="col text-center">
-                <label for="Trade">Trade</label><br>
-                <input type="checkbox" class="checkbox-round" name="Trade" id="Trade">
-
-              </div>
-
-
-
-              <div class="col text-center">
-                <label for="Both">Both</label><br>
-                <input type="checkbox" class="checkbox-round" name="Both" id="Both">
-
-              </div>
+    <!-- NAV -->
+    <header>
+      <div class="collapse bg-transparent" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-dark">About</h4>
+              <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-dark">Menu</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-dark">Home</a></li>
+                <li><a href="#" class="text-dark">Profile</a></li>
+                <li><a href="#" class="text-dark">Plant List</a></li>
+              </ul>
             </div>
           </div>
-          <div class="submitbtn">
-          <input class="submit text-center" type="submit" value="Create">   
-          </div>
         </div>
+      </div>
+      <div class="navbar navbar-dark bg-transparent box-shadow ">
+        <div class="container d-flex justify-content-between">
+          <div class="navbar-brand d-flex align-items-center">
+            <strong>Logo</strong>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon radius"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAKE A LIST -->
+    <div class="container radius w-75 second-background">
+      <div class="row insert_post">
+        <form action="" method="POST">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 border border-secondary">
+            <h1 class="text-center" >List an item</h1>
+            <div class="form-label-group">
+              <label class="font-color" for="plant_name">Plant Name</label>
+              <input type="text" id="plant_name" class="form-control mb-2" name="plant_name"  required autofocus>
+            </div>
+            <div class="form-label-group">
+              <label class="font-color" for="description">Description</label>
+              <input type="text" id="description" class="form-control mb-2" name="description" required>
+            </div>
+            <div class="form-label-group">
+              <label class="font-color" for="price">Price</label>
+              <input type="text" id="price" class="form-control mb-2" name="price" required>
+            </div>
+            <div class="form-label-group">
+              <label class="font-color" for="image_url">Image URL</label>
+              <input type="text" id="image_url" class="form-control mb-2" name="image_url" required>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 border border-success">
+              
+          </div>
+        </form>
+          
+
+      </div>
+      
+    </div>
 
 
-
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
-          <h4>Category</h4>
-                    <input type="checkbox" class="hidden" name="Indoor" id="Indoor"><label for="Indoor">Indoor</label><input type="checkbox" class="hidden" name="Outdoor" id="Outdoor"><label for="Outdoor">Outdoor</label><input type="checkbox" class="hidden" name="Ferns" id="Ferns"><label for="Ferns">Ferns</label><br>
-                    <input type="checkbox" class="hidden" name="Trees" id="Trees"><label for="Trees">Trees</label><input type="checkbox" class="hidden" name="Tropical" id="Tropical"><label for="Tropical">Tropical</label><input type="checkbox" class="hidden" name="Cacti" id="Cacti"><label for="Cacti">Cacti</label><br>
     
-                    <h4>Care</h4>
+    <!-- <div class="container">
+        <div class="row">
+          <div class="insert_post">
+              <form action="" method="POST">
+             
+            
+           
+            <div class="container tradebtns">
+              <div class="row">
+                <div class="col text-center">
+                  <label for="Sell">Sell $</label><br>
+                  <input type="checkbox" class="checkbox-round" name="Sell" id="Sell">
+                </div>
+                <div class="col text-center">
+                  <label for="Trade">Trade</label><br>
+                  <input type="checkbox" class="checkbox-round" name="Trade" id="Trade">
+
+                </div>
+
+
+
+                <div class="col text-center">
+                  <label for="Both">Both</label><br>
+                  <input type="checkbox" class="checkbox-round" name="Both" id="Both">
+
+                </div>
+              </div>
+            </div>
+            <div class="submitbtn">
+            <input class="submit text-center" type="submit" value="Create">   
+            </div>
+
+
+
+
+          <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+            <h4>Category</h4>
+                      <input type="checkbox" class="hidden" name="Indoor" id="Indoor"><label for="Indoor">Indoor</label><input type="checkbox" class="hidden" name="Outdoor" id="Outdoor"><label for="Outdoor">Outdoor</label><input type="checkbox" class="hidden" name="Ferns" id="Ferns"><label for="Ferns">Ferns</label><br>
+                      <input type="checkbox" class="hidden" name="Trees" id="Trees"><label for="Trees">Trees</label><input type="checkbox" class="hidden" name="Tropical" id="Tropical"><label for="Tropical">Tropical</label><input type="checkbox" class="hidden" name="Cacti" id="Cacti"><label for="Cacti">Cacti</label><br>
+      
+                      <h4>Care</h4>
+                      <div class="dropdown mt-5">  
+                        <button type="button" class="dropbtn" data-toggle="dropdown">  
+                          <i class="fas fa-ruler fa-lg"></i>
+                        </button>  
+                        <div class="dropdown-menu">  
+                            <a class="dropdown-item" href="#"> 1 </a>  
+                            <a class="dropdown-item" href="#"> 2 </a>  
+                            <a class="dropdown-item" href="#"> 3 </a>  
+                            <a class="dropdown-item" href="#"> 4 </a>  
+                        </div>  
+                    </div> 
                     <div class="dropdown mt-5">  
                       <button type="button" class="dropbtn" data-toggle="dropdown">  
-                        <i class="fas fa-ruler fa-lg"></i>
+                        <i class="fas fa-tint fa-lg"></i>
                       </button>  
                       <div class="dropdown-menu">  
                           <a class="dropdown-item" href="#"> 1 </a>  
@@ -183,7 +148,7 @@
                   </div> 
                   <div class="dropdown mt-5">  
                     <button type="button" class="dropbtn" data-toggle="dropdown">  
-                      <i class="fas fa-tint fa-lg"></i>
+                      <i class="fas fa-cloud-sun fa-lg"></i>
                     </button>  
                     <div class="dropdown-menu">  
                         <a class="dropdown-item" href="#"> 1 </a>  
@@ -194,7 +159,7 @@
                 </div> 
                 <div class="dropdown mt-5">  
                   <button type="button" class="dropbtn" data-toggle="dropdown">  
-                    <i class="fas fa-cloud-sun fa-lg"></i>
+                    <i class="fas fa-thermometer-half fa-lg"></i>
                   </button>  
                   <div class="dropdown-menu">  
                       <a class="dropdown-item" href="#"> 1 </a>  
@@ -203,48 +168,21 @@
                       <a class="dropdown-item" href="#"> 4 </a>  
                   </div>  
               </div> 
-              <div class="dropdown mt-5">  
-                <button type="button" class="dropbtn" data-toggle="dropdown">  
-                  <i class="fas fa-thermometer-half fa-lg"></i>
-                </button>  
-                <div class="dropdown-menu">  
-                    <a class="dropdown-item" href="#"> 1 </a>  
-                    <a class="dropdown-item" href="#"> 2 </a>  
-                    <a class="dropdown-item" href="#"> 3 </a>  
-                    <a class="dropdown-item" href="#"> 4 </a>  
-                </div>  
-            </div> 
-            <label for="author_name">Image Link</label><br>
-                    <input type="text" name="image_link" placeholder="Enter an image link" id="image_link" required><br>
-                    
-          
+              <label for="author_name">Image Link</label><br>
+                      <input type="text" name="image_link" placeholder="Enter an image link" id="image_link" required><br>
+                      
+            
+          </div>
+           </div>
+           </form>
         </div>
-      </div>
-      </form>
-      </div>
     </div>
-    </div>
-    
-
-
-
-
-
-
-    <!-- <div class="container">
-      <div class="row">
-
-
-      </div>
-    </div> -->
-
-
-
-
+  -->
+      
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
+  </body>
 
 </html>
