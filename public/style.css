@@ -4,12 +4,50 @@
   box-sizing: border-box;
 }
 
-
 body {
-  background-color: #CCFCFF;
+  background-color: #DEEDED;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color:#053642 ;
+}
+
+.header{
+  font-size: 20px;
+  font-weight: 700px;
+}
+
+/* //////////////BUTTONS///////////////// */
+.primarybtn {
+text-align: center; 
+margin-top: 50px;
+background:#236F99 ;
+border-radius: 20px;
+color:#DEEDED;
+}
+
+.secondarybtn{
+  text-align: center; 
+  margin-top: 50px;
+  background:#B4E1E2 ;
+  border-radius: 20px;
+}
+
+/* ///////////////BUTTONS///////////////*/
+
+/* ///////////////FORMS///////////////*/
+.form-container{
+  background-color:#ECF6F6 ;
+  border-radius: 25px;
+}
+
+.form-input{
+  border: none;
+  border-bottom: 1px solid #053642;
+  outline: none;
 }
 
 
+/* ///////////////FORMS///////////////*/
 ul {
   list-style-type: none;
   margin: 0;
@@ -39,7 +77,7 @@ li a:hover:not(.active) {
 
 
 
-/* CATEGORIES */
+/* ///////////////CATEGORIES ///////////////////*/
 
 .hidden {position:absolute;visibility:hidden;opacity:0;}
 input[type=checkbox] + label {
@@ -50,6 +88,7 @@ padding-left: 10px;
 padding-right: 10px;
 border-radius: 15px;
 background-color: #DEFFEF;
+
 } 
 input[type=checkbox]:checked + label {
 color: black;
@@ -61,10 +100,10 @@ border-radius: 15px;
 background-color: #77D0D6;
 }
 
+/* ///////////////CATEGORIES///////////////////*/
 
 
-
-/* SELL TRADE BOTH */
+/* ///////////////////SELL TRADE BOTH///////////////////*/
 
 .checkbox-round {
 width: 1.3em;
@@ -76,6 +115,7 @@ border: 1px solid #77D0D6;
 -webkit-appearance: none;
 outline: none;
 cursor: pointer;
+
 }
 
 .checkbox-round:checked {
@@ -87,12 +127,12 @@ outline: 0;
 border-width: 0 0 1px;
 border-color: black;
 }
+/* ///////////////////SELL TRADE BOTH///////////////////*/
 
 
 
-
-
-/* Dropdown Button */
+/* 
+/* ///////////////////Dropdown Button/////////////////// */
 .dropbtn {
 background-color: #F35B54;
 color: white;
@@ -140,6 +180,7 @@ display: block;
 #icon{
   align-items: right;
 }
+/* ///////////////////Dropdown Button/////////////////// */
 
 
 /* create button */
@@ -170,4 +211,4 @@ display: block;
     margin-bottom: 15px;
     font-size: 16px;
     margin-top:5px;
-}
+} 
