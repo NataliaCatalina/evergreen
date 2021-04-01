@@ -50,7 +50,7 @@ app.use(passport.session());
 // START OUR SERVER
 mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
     .then((result) => {
-        app.listen(4000);
+        app.listen(3000);
         console.log('database is connected');
         
     }).catch((err) => {
