@@ -125,6 +125,15 @@ p{
     border-radius: 15px;
     background-color: #DEFFEF;
   }  
+  input[type=checkbox]:checked + label {
+    color: black;
+    font-style: normal;
+    border: 2px solid #DEFFEF;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+    background-color: #77D0D6;
+    }
 
   .checkbox-round {
     width: 1.3em;
@@ -161,6 +170,8 @@ p{
     outline: 0;
     border-width: 0 0 1px;
     border-color: black;
+    fill: none;
+    background: transparent;
   }
 
   
@@ -177,6 +188,10 @@ p{
       font-size: 16px;
       margin-top:5px;
   } 
+
+  .list-control {
+    border-radius: 15px;
+  }
 
 
 
@@ -215,7 +230,7 @@ display: block;
 
 
 
-/* Edit page - Alex */
+/* Home page - Alex */
 
 .loginButtonHome {
   text-align: center;
