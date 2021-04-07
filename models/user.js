@@ -5,7 +5,9 @@ const UserSchema = new mongoose.Schema({
     username:String,
     password:String,
     phone:Number,
-    email:String
+    email:String,
+    profilePicture: Buffer,
+    biography: String
 });
 
 //add a hash and salt field to our Schema in order to store the hashed password and the salt value.
