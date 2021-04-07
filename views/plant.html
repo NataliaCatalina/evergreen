@@ -43,22 +43,27 @@
     </section> 
 
 
-
-    <!-- PROFILE -->
+    <!-- PLANT PROFILE -->
     <div class="container mt-5">
+      {% for post in allpost %}
       <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 border border-primary">
-          <p>View details</p>
+          <div class="d-inline-block mb-2 text-primary">
+            <a href="/delete/{{post._id}}" class="btn btn-outline-dark">Delete</a>
+            <a href="/edit/{{post._id}}" class="btn btn-outline-dark">Edit</a>
+          </div>
+          <h2 class="mb-3"><span class="post_title">{{post.plant_name |e}}</span></h2>
           <P>Location</P>
           <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          <!-- <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p> -->
         </div>
+
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 border border-secondary">
           <h4>On trade</h4>
           <a href="list">Make a list</a>
-
         </div>
       </div>
+      {% endfor %}
     </div>
 
 
