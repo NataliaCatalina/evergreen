@@ -208,3 +208,44 @@ display: block;
 
 
 
+
+/* Edit page - Alex */
+
+.loginButtonHome {
+  text-align: center;
+  margin-top: 50px;
+  background:#236F99 ;
+  border-radius: 20px;
+  color:#DEEDED;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.signupButtonHome {
+  text-align: center; 
+  margin-top: 25px;
+  background:#236F99 ;
+  border-radius: 20px;
+  color:#DEEDED;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.justbrowsingButtonHome {
+  text-align: center; 
+  margin-top: 25px;
+  background:#236F99 ;
+  border-radius: 20px;
+  color:#DEEDED;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.logoHome {
+  width: auto;
+  height: 200px;
+  margin-top: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
