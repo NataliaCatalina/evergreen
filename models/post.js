@@ -17,7 +17,19 @@ const postSchema = new Schema({
     image_url:{
         type:String,
         require:true
+    },
+    created: { 
+        type: Date,
+        default: Date.now
+    },
+    author: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'User'
+    },
+    category: {
+        type: String,
     }
+    
 
     },{
         timestamps: true

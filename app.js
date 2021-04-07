@@ -70,6 +70,9 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
     app.get("/login", (req,res) =>{
         res.render("login")
     })
+    app.get("/home", (req,res) =>{
+        res.render("home")
+    })
     // app.get("/dashboard", (req,res) =>{
     //     res.render("dashboard")
     // })
