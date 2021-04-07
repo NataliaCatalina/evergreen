@@ -86,6 +86,11 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
         res.render("account")
     })
     
+    app.get("/plant/", (req,res) =>{
+
+        res.render("plant")
+    })
+    
 
 
 
@@ -158,24 +163,21 @@ app.get('/dashboard', isLoggedIn, (req, res) => {
 });
 
 
-app.get('/', (req, res) => {
-    // FETCH ALL POSTS FROM DATABASE
-    console.log('return post')
-    Post.find()
-    // sort by most recent
-    .sort({createdAt: 'descending'})
-    .then(result => {
-        if(result){
-            // RENDERING HOME VIEW WITH ALL POSTS
-            res.render('dashboard',{
-                allpost:result
-            });
-        }
-    })
-    .catch(err => {
-        if (err) throw err;
-    }); 
-});
+// app.get('/', (req, res) => {
+//     console.log('return post')
+//     Post.find()
+//     .sort({createdAt: 'descending'})
+//     .then(result => {
+//         if(result){
+//             res.render('dashboard',{
+//                 allpost:result
+//             });
+//         }
+//     })
+//     .catch(err => {
+//         if (err) throw err;
+//     }); 
+// });
 
 
 // DELETE COMMENTS
@@ -192,46 +194,47 @@ app.get('/delete/:id', (req, res) => {
 
 
 
-// UPDATE POST
-// app.get('/edit/:id', (req, res) => {
-//     Post.findById(req.params.id)
-//     .then(result => {
-//         if(result){
-//             res.render('edit',{
-//                 post:result
-//             });
-//         }
-//         else{
-//             res.redirect('/');
-//         }
-//     })
-//     .catch(err => {
-//         res.redirect('/');
-//     });
-// });
+//UPDATE POST
+app.get('/plant/:id', (req, res) => {
+    
+    Post.findById(req.params.id)
+    .then(result => {
+        if(result){
+            res.render('plant',{
+                post:result
+            });
+        }
+        else{
+            res.redirect('/');
+        }
+    })
+    .catch(err => {
+        res.redirect('/');
+    });
+});
 
-// UPDATE POST
-// app.post('/edit/:id', (req, res) => {
-//     Post.findById(req.params.id)
-//     .then(result => {
-//         if(result){
-//             result.title = req.body.title;
-//             result.content = req.body.content;
-//             result.author_name = req.body.author;
-//             return result.save();
-//         }
-//         else{
-//             console.log(err);
-//             res.redirect('/');
-//         }
-//     })
-//     .then(update => {
-//         res.redirect('/dashboard');
-//     })
-//     .catch(err => {
-//         res.redirect('/');
-//     });
-// });
+//UPDATE POST
+app.post('/plant/:id', (req, res) => {
+    Post.findById(req.params.id)
+    .then(result => {
+        if(result){
+            result.plant_name = req.body.plant_name;
+            result.description = req.body.description;
+            result.price = req.body.price;
+            return result.save();
+        }
+        else{
+            console.log(err);
+            res.redirect('/');
+        }
+    })
+    .then(update => {
+        res.redirect('/dashboard');
+    })
+    .catch(err => {
+        res.redirect('/');
+    });
+});
 
 
 
