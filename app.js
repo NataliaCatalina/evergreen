@@ -22,8 +22,8 @@ app.engine('html', twig.__express);
 app.set('views','views');
 
 // MONGO DATABASE URL
-// const MONGODB_URL = 'mongodb+srv://test:test123@cluster0.8tyse.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-const MONGODB_URL = 'mongodb+srv://test:Password@cluster0.7bulh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const MONGODB_URL = 'mongodb+srv://test:test123@cluster0.8tyse.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+
 
 mongoose.connect(MONGODB_URL, { useUnifiedTopology: true });
  
