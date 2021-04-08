@@ -22,6 +22,11 @@
       <a href="dashboard" class="navbar-brand d-flex align-items-center">
         <strong>Evergreen</strong>
       </a>
+      <div class="text">
+        {% if user %}
+        <p>Hello {{user.username |e}}!</p>
+        {% endif %}
+      </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <a id="navIcon"><i class="col fas fa-bars"></i></a>
       </button>
@@ -32,11 +37,11 @@
     <nav id="mainNav" class="navbar-primary">
       <ul class="navbar-primary-menu">
         <li>
-          <a href="#"><span class="nav-label">Home</span></a>
+          <a href="/"><span class="nav-label">Home</span></a>
           <a href="account"><span class="nav-label">Profile</span></a>
           <a href="#"><span class="nav-label">About</span></a>
           <a href="list"><span class="nav-label">List a Plant</span></a>
-          <a href="#"><span class="nav-label">Logout</span></a>
+          <a href="/logout"><span class="nav-label">Logout</span></a>
         </li>
       </ul>
     </nav>
