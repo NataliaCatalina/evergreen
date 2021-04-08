@@ -17,6 +17,20 @@ p{
   background-color: #ECF6F6;
 }
 
+/*********************************** Text*/
+
+.header{
+  font-size: 30px;
+ font-family: ;
+  padding: 15px;
+  color:#053642 ;
+}
+
+.sub-header{
+  font-size: 15px;
+  color:#053642 ;
+  font-weight: 600px;
+}
 
 
 
@@ -69,29 +83,35 @@ p{
   color:#053642 ;
 }
 
-.header{
-  font-size: 30px;
-  font-weight: 700px;
-  text-align: center;
-  padding: 15px;
-}
+
 
 
 /************************************* LOG IN - SIGN UP (HAYLEY) */
 
 /* ///////////////FORMS///////////////*/
-  .form-container{
+  .form-container {
     background-color:#ECF6F6 ;
     border-radius: 25px;
   }
 
-  /* .form-input{
+  .form-input {
     border: none;
     border-bottom: 1px solid #053642;
     outline: none;
-  } */
+    background-color:#ECF6F6 ;
+  }
 
+  .form-header {
+    font-size: 45px;
+    font-weight: 700px;
+    padding: 30px;
+    color:#053642 ;
+    text-align: left; 
+  }
  
+  .login-image {
+
+  }
 
 
 /* //////////////BUTTONS///////////////// */
@@ -101,6 +121,7 @@ p{
     background:#236F99 ;
     border-radius: 20px;
     color:#DEEDED;
+    
     
   }
   
