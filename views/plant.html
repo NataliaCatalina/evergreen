@@ -22,6 +22,11 @@
         <a href="dashboard" class="navbar-brand d-flex align-items-center">
           <strong>Evergreen</strong>
         </a>
+        <div class="text">
+          {% if user %}
+          <p>Hello {{user.username |e}}!</p>
+          {% endif %}
+        </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
           <a id="navIcon"><i class="col fas fa-bars"></i></a>
         </button>
@@ -32,11 +37,11 @@
       <nav id="mainNav" class="navbar-primary">
         <ul class="navbar-primary-menu">
           <li>
-            <a href="home"><span class="nav-label">Home</span></a>
+            <a href="/"><span class="nav-label">Home</span></a>
             <a href="account"><span class="nav-label">Profile</span></a>
             <a href="#"><span class="nav-label">About</span></a>
             <a href="list"><span class="nav-label">List a Plant</span></a>
-            <a href="#"><span class="nav-label">Logout</span></a>
+            <a href="/logout"><span class="nav-label">Logout</span></a>
           </li>
         </ul>
       </nav>
@@ -45,25 +50,25 @@
 
     <!-- PLANT PROFILE -->
     <div class="container mt-5">
-      {% for post in allpost %}
+      <!-- {% for post in allpost %} -->
       <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 border border-primary">
+          <img class="card-img-right img-fluid flex-auto d-md-block image-card" src="{{post.image_url |e}}" alt="art image">
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 border border-secondary">
+          <h2 class="mb-3"><span class="post_title">{{post.plant_name |e}}</span></h2>
+          <p>Location</p>
+          <p> <span>{{post.author |e}}</span> </p>
+          <p> <span>{{post.price._id |e}}</span> </p>
           <div class="d-inline-block mb-2 text-primary">
             <a href="/delete/{{post._id}}" class="btn btn-outline-dark">Delete</a>
             <a href="/edit/{{post._id}}" class="btn btn-outline-dark">Edit</a>
           </div>
-          <h2 class="mb-3"><span class="post_title">{{post.plant_name |e}}</span></h2>
-          <P>Location</P>
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <!-- <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p> -->
         </div>
 
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 border border-secondary">
-          <h4>On trade</h4>
-          <a href="list">Make a list</a>
-        </div>
       </div>
-      {% endfor %}
+      <!-- {% endfor %} -->
     </div>
 
 

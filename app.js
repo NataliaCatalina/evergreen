@@ -1,4 +1,7 @@
-//NPM PACKAGES
+///////////////////
+// NPM PACKAGES //
+/////////////////
+
 const express = require('express');
 const mongoose = require ('mongoose');
 const passport =  require("passport");
@@ -6,7 +9,10 @@ const bodyParser = require ('body-parser');
 const twig  = require('twig');
 const app = express();
 
-// IMPORT OUR MODEL
+///////////////////////
+// IMPORT OUR MODEL //
+/////////////////////
+
 const User = require("./models/user");
 const Post = require('./models/post'); 
 
@@ -16,18 +22,26 @@ const LocalStrategy = require("passport-local");
 //simplifies the integration between Mongoose and Passport for local authentication
 const passportLocalMongoose = require("passport-local-mongoose");
 
-// SET THE VIEW ENGINE
+//////////////////
+// VIEW ENGINE //
+////////////////
+
 app.set('view engine', 'html');
 app.engine('html', twig.__express);
 app.set('views','views');
 
-// MONGO DATABASE URL
+/////////////////////////
+// MONGO DATABASE URL //
+///////////////////////
+
 const MONGODB_URL = 'mongodb+srv://test:test123@cluster0.8tyse.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-
-
 mongoose.connect(MONGODB_URL, { useUnifiedTopology: true });
- 
-// PUBLIC ACCESIBLE TO OUR BACKEND APPLICATION
+
+
+////////////////////////////////////////////////// 
+// PUBLIC ACCESIBLE TO OUR BACKEND APPLICATION //
+////////////////////////////////////////////////
+
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/js'));
 
@@ -44,12 +58,16 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser()); 
 passport.use(new LocalStrategy(User.authenticate()));
 
-// BIDYPARSER TO RETURN INFORMATION TO OUR DATABASE
+// BOYPARSER TO RETURN INFORMATION TO OUR DATABASE
 app.use(bodyParser.urlencoded({ extended:true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-// START OUR SERVER
+
+//////////////////////
+// START OUR SERVER //
+/////////////////////
+
 mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
     .then((result) => {
         app.listen(3001);
@@ -60,10 +78,42 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
     });
 
 
+//////////////////////
+// RENDERING PAGES //
+/////////////////////
 
     app.get('/', (req, res) => {
-        res.sendFile(__dirname + '/views/home.html');
-       });
+        Post.find()
+        .sort({createdAt: 'descending'})
+        .then(result => {
+            if(result){
+                res.render('home',{
+                    allpost:result
+                });
+            }
+        })
+        .catch(err => {
+            if (err) throw err;
+        }); 
+    });
+
+    app.get("/public", (req,res) =>{
+        Post.find()
+        .sort({createdAt: 'descending'})
+        .then(result => {
+            if(result){
+            res.render("public",{
+            allpost:result
+            });
+        }
+    })
+    .catch(err => {
+        if (err) throw err;
+        }); 
+    });
+
+
+
     app.get("/signup", (req,res) =>{
         res.render("signup")
     })
@@ -73,9 +123,7 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
     app.get("/home", (req,res) =>{
         res.render("home")
     })
-    // app.get("/dashboard", (req,res) =>{
-    //     res.render("dashboard")
-    // })
+
     app.get("/list", (req,res) =>{
         res.render("list")
     })
@@ -85,19 +133,15 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
     app.get("/account", (req,res) =>{
         res.render("account")
     })
-    
-    app.get("/plant/", (req,res) =>{
 
-        res.render("plant")
-    })
     
 
+/////////////////////////
+// REGISTER A NEW USER //
+/////////////////////////
 
-
-
-// REGISTER A NEW USER
 app.post("/signup",(req,res)=>{ 
-    User.register(new User({            //passport-local-mongoose function to register a new user
+    User.register(new User({       
     	username:req.body.username,
         email:req.body.email,
         phone:req.body.phone,
@@ -113,8 +157,10 @@ app.post("/signup",(req,res)=>{
     })
 });
 
+//////////////////////////////
+// LOGGING AN EXISTING USER //
+/////////////////////////////
 
-// SET UP THE FUNCTIONALITY FOR LOGGING AN EXISTING USER
 app.post("/login", passport.authenticate("local",{
     successRedirect:"/dashboard",
     failureRedirect:"/login"
@@ -123,8 +169,10 @@ app.post("/login", passport.authenticate("local",{
 
 
 
+/////////////////////
+// ADD A PLANT LIST//
+////////////////////
 
-// ADD A POST
 app.post('/list', (req, res) => {
     new Post({
         plant_name:req.body.plant_name,
@@ -142,22 +190,22 @@ app.post('/list', (req, res) => {
     .save()
     .then(result => {
         console.log(result);
-        res.redirect('/');
+        res.redirect('/dashboard');
     })
     .catch(err => {
         if (err) throw err;
     });
 });
 
-// DISPLAY COMMENTS
+////////////////////////
+// DISPLAY PLANT LIST //
+///////////////////////
+
 app.get('/dashboard', isLoggedIn, (req, res) => {
-    // FETCH ALL POSTS FROM DATABASE
     Post.find()
-    // sort by most recent
     .sort({createdAt: 'descending'})
     .then(result => {
         if(result){
-            // RENDERING HOME VIEW WITH ALL POSTS
             res.render('dashboard',{
                 allpost:result,
                 user: req.user
@@ -169,25 +217,25 @@ app.get('/dashboard', isLoggedIn, (req, res) => {
     }); 
 });
 
+app.get('/', (req, res) => {
+    Post.find()
+    .sort({createdAt: 'descending'})
+    .then(result => {
+        if(result){
+            res.render('dashboard',{
+                allpost:result
+            });
+        }
+    })
+    .catch(err => {
+        if (err) throw err;
+    }); 
+});
 
-// app.get('/', (req, res) => {
-//     console.log('return post')
-//     Post.find()
-//     .sort({createdAt: 'descending'})
-//     .then(result => {
-//         if(result){
-//             res.render('dashboard',{
-//                 allpost:result
-//             });
-//         }
-//     })
-//     .catch(err => {
-//         if (err) throw err;
-//     }); 
-// });
+//////////////////////////
+// DELETE A PLANT LIST //
+////////////////////////
 
-
-// DELETE COMMENTS
 app.get('/delete/:id', (req, res) => {
     Post.findByIdAndDelete(req.params.id)
     .then(result => {
@@ -200,15 +248,60 @@ app.get('/delete/:id', (req, res) => {
 });
 
 
+/////////////////////
+// UPDATE A PLANT //
+////////////////////
+
+app.get('/edit/:id', (req, res) => {
+    Post.findById(req.params.id)
+    .then(result => {
+        if(result){
+              res.render('edit',{
+                post:result
+            });
+        }
+        else{
+            res.redirect('/dashboar');
+        }
+    })
+    .catch(err => {
+        res.redirect('dashboar');
+    });
+});
 
 //UPDATE POST
+app.post('/edit/:id', (req, res) => {
+    Post.findById(req.params.id)
+    .then(result => {
+        if(result){
+            result.plant_name = req.body.plant_name;
+            result.description = req.body.description;
+            result.price = req.body.price;
+            return result.save();
+        }
+        else{
+            console.log(err);
+            res.redirect('/dashboar');
+        }
+    })
+    .then(update => {
+        res.redirect('/dashboard');
+    })
+    .catch(err => {
+        res.redirect('/dashboar');
+    });
+});
+
+//////////////////////////
+// GO TO PLANT PROFILE//
+////////////////////////
 app.get('/plant/:id', (req, res) => {
     
     Post.findById(req.params.id)
     .then(result => {
         if(result){
-            res.render('plant',{
-                post:result
+              res.render('plant',{
+                allpost:result
             });
         }
         else{
@@ -244,9 +337,11 @@ app.post('/plant/:id', (req, res) => {
 });
 
 
+/////////////
+// LOGOUT //
+///////////
 
-// LOGOUT 
-app.get("/logout",(req,res)=>{  // logout function
+app.get("/logout",(req,res)=>{
     req.logout();
     res.redirect("/");
 });
