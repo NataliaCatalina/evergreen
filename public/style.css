@@ -191,6 +191,30 @@ p{
 
   .list-control {
     border-radius: 15px;
+    padding: 50px;
+  }
+  .careHeading{
+    margin-top: 50px;
+  }
+  .categoryHeading{
+    margin-top: 150px;
+  }
+
+  .cancelButton {
+    color: #053642;
+    text-decoration: none;
+    float: right;
+  }
+
+  .cancelButton:hover {
+    cursor: pointer;
+    color:#053642; 
+    text-decoration:none; 
+
+  }
+
+  .tradebtns {
+    margin-top: 50px;
   }
 
 

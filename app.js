@@ -178,7 +178,14 @@ app.post('/list', (req, res) => {
         plant_name:req.body.plant_name,
         description:req.body.description,
         price:req.body.price,
-        image_url:req.body.image_url
+        image_url:req.body.image_url,
+        // Indoor:req.body.Indoor,
+        // Outdoor:req.body.Outdoor,
+        // Ferns:req.body.Ferns,
+        // Trees:req.body.Trees,
+        // Tropical:req.body.Tropical,
+        // Cacti:req.body.Cacti,
+
     })
     .save()
     .then(result => {
@@ -343,4 +350,3 @@ function isLoggedIn(req, res, next) {
                 return next();
             res.redirect('/');     
 };
-

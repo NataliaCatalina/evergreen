@@ -12,3 +12,7 @@ navIcon.addEventListener('click', () => {
     }
 })
 
+// CANCEL BUTTON
+function goBack() {
+    window.history.back();
+  }
