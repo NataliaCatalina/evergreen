@@ -124,6 +124,10 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
         res.render("home")
     })
 
+    app.get("/about", (req,res) =>{
+        res.render("about")
+    })
+
     app.get("/list", (req,res) =>{
         res.render("list")
     })
