@@ -124,6 +124,10 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
         res.render("home")
     })
 
+    app.get("/about", (req,res) =>{
+        res.render("about")
+    })
+
     app.get("/list", (req,res) =>{
         res.render("list")
     })
@@ -132,6 +136,9 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
     })
     app.get("/account", (req,res) =>{
         res.render("account")
+    })
+    app.get("/success", (req,res) =>{
+        res.render("success")
     })
 
     
