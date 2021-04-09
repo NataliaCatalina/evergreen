@@ -9,14 +9,13 @@ body {
 
 }
 
-p{
+h1, h2, h3, h4, h5, h6, label, p{
   color: #053642;
 }
 /*********************************** Colors*/
 .second-background {
   background-color: #ECF6F6;
 }
-
 
 
 
@@ -78,23 +77,18 @@ p{
 
 
 /************************************* LOG IN - SIGN UP (HAYLEY) */
-
-/* ///////////////FORMS///////////////*/
   .form-container{
     background-color:#ECF6F6 ;
     border-radius: 25px;
   }
 
-  /* .form-input{
+  .form-input{
     border: none;
     border-bottom: 1px solid #053642;
     outline: none;
-  } */
-
- 
+  }
 
 
-/* //////////////BUTTONS///////////////// */
   .primary-btn {
     text-align: center; 
     margin-top: 50px;
@@ -216,7 +210,6 @@ p{
   .tradebtns {
     margin-top: 50px;
   }
-
 
 
 /********************************************** Dropdown Content (Hidden by Default) */
