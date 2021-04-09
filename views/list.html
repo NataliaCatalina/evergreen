@@ -66,67 +66,72 @@
           </div>
         </div>
 
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-              <h4 class="categoryHeading mb-3">Category</h4>
-              <input type="radio" class="hidden" id="indoor" name="category" value="indoor">
-              <label for="indoor">Indoor</label>
-              <input type="radio" class="hidden" id="outdoor" name="category" value="outdoor">
-              <label for="outdoor">Outdoor</label>
-              <input type="radio" class="hidden" id="ferns" name="category" value="ferns">
-              <label for="ferns">Ferns</label><br>
-              <input type="radio" class="hidden" id="trees" name="category" value="trees">
-              <label for="trees">Trees</label>
-              <input type="radio" class="hidden" id="tropical" name="category" value="tropical">
-              <label for="tropical">Tropical</label>
-              <input type="radio" class="hidden" id="cacti" name="category" value="cacti">
-              <label for="cacti">Cacti</label><br>
+        
+        <!-- Category -->
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <h4 class="categoryHeading mb-3">Category</h4>
+            <input type="radio" id="indoor" name="category" value="indoor">
+            <label for="indoor">Indoor</label>
+            <input type="radio" id="outdoor" name="category" value="outdoor">
+            <label for="outdoor">Outdoor</label>
+            <input type="radio" id="ferns" name="category" value="ferns">
+            <label for="ferns">Ferns</label><br>
+            <input type="radio" id="trees" name="category" value="trees">
+            <label for="trees">Trees</label>
+            <input type="radio" id="tropical" name="category" value="tropical">
+            <label for="tropical">Tropical</label>
+            <input type="radio" id="cacti" name="category" value="cacti">
+            <label for="cacti">Cacti</label><br>
 
+
+            <!-- Care -->
             <h4 class="careHeading">Care</h4>
-            <div class="dropdown">  
-              <button type="button" class="dropbtn" data-toggle="dropdown">  
-                <i class="fas fa-ruler fa-lg"></i>
-              </button>  
-              <div class="dropdown-menu">  
-                  <a class="dropdown-item" href="#"> 1 </a>  
-                  <a class="dropdown-item" href="#"> 2 </a>  
-                  <a class="dropdown-item" href="#"> 3 </a>  
-                  <a class="dropdown-item" href="#"> 4 </a>  
-              </div>  
-            </div> 
-            <div class="dropdown">  
-              <button type="button" class="dropbtn" data-toggle="dropdown">  
-                <i class="fas fa-tint fa-lg"></i>
-              </button>  
-              <div class="dropdown-menu">  
-                  <a class="dropdown-item" href="#"> 1 </a>  
-                  <a class="dropdown-item" href="#"> 2 </a>  
-                  <a class="dropdown-item" href="#"> 3 </a>  
-                  <a class="dropdown-item" href="#"> 4 </a>  
-              </div>  
-            </div> 
+            <!-- Lighting -->
             <div class="dropdown">  
               <button type="button" class="dropbtn" data-toggle="dropdown">  
                 <i class="fas fa-cloud-sun fa-lg"></i>
               </button>  
-              <div class="dropdown-menu">  
-                  <a class="dropdown-item" href="#"> 1 </a>  
-                  <a class="dropdown-item" href="#"> 2 </a>  
-                  <a class="dropdown-item" href="#"> 3 </a>  
-                  <a class="dropdown-item" href="#"> 4 </a>  
-              </div>  
+              <select for="lighting" class="dropdown-menu" name="lighting" id="lighting">  
+                  <option class="dropdown-item" value="sun">Sun</option>  
+                  <option class="dropdown-item" value="shade">Shade</option>  
+                  <option class="dropdown-item" value="bright">Bright</option>  
+              </select>  
             </div> 
+            <!-- Watering -->
+            <div class="dropdown">  
+              <button type="button" class="dropbtn" data-toggle="dropdown">  
+                <i class="fas fa-tint fa-lg"></i>
+              </button>  
+              <select for="watering" class="dropdown-menu" name="watering" id="watering">  
+                <option class="dropdown-item" value="little">Little</option>   
+                <option class="dropdown-item" value="some">Some</option>   
+                <option class="dropdown-item" value="often">Often</option>   
+      
+              </select>  
+            </div> 
+            <!-- Temperature -->
             <div class="dropdown">  
               <button type="button" class="dropbtn" data-toggle="dropdown">  
                 <i class="fas fa-thermometer-half fa-lg"></i>
               </button>  
-              <div class="dropdown-menu">  
-                  <a class="dropdown-item" href="#"> 1 </a>  
-                  <a class="dropdown-item" href="#"> 2 </a>  
-                  <a class="dropdown-item" href="#"> 3 </a>  
-                  <a class="dropdown-item" href="#"> 4 </a>  
-              </div>  
+              <select for="temperature" class="dropdown-menu" name="temperature" id="temperature">
+                  <option class="dropdown-item" value="cold"> Cold </option>  
+                  <option class="dropdown-item" value="warm"> Warm </option>  
+                  <option class="dropdown-item" value="hot"> Hot </option>  
+              </select>  
             </div> 
+            <!-- size -->
+            <div class="dropdown">  
+              <button type="button" class="dropbtn" data-toggle="dropdown">  
+                <i class="fas fa-ruler fa-lg"></i>
+              </button>  
+              <select for="size" class="dropdown-menu" name="size" id="size">
+                  <option class="dropdown-item" href="#">Small</option>  
+                  <option class="dropdown-item" href="#">Medium</option>  
+                  <option class="dropdown-item" href="#">Large</option>  
+              </select>  
 
+            <!-- Trade -->
             <div class="container tradebtns">
               <div class="row">
                 <div class="col text-center">
@@ -145,13 +150,11 @@
               </div>
             </div>
         </div>
-          <div>
-            <button class="btn submit-btn col-2 mt-5 mx-5 primary-btn" type="submit" id="submit-btn" value="POST">Post</button>
-            <a class="cancelButton mt-5 mx-5" onclick="goBack()">Cancel</a>
-          </div>
-      </form>
-    </div>
 
+
+        <button class="btn submit-btn col-2 m-5 primarybtn" type="submit" id="submit-btn" value="POST">Post</button>
+        <a class="cancelButton m-5" onclick="goBack()">Cancel</a>
+      </form>
 
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"> </script>
