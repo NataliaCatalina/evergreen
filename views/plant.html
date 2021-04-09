@@ -50,7 +50,7 @@
 
     <!-- PLANT PROFILE -->
     <div class="container mt-5">
-      <!-- {% for post in allpost %} -->
+
       <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 border border-primary">
           <img class="card-img-right img-fluid flex-auto d-md-block image-card" src="{{post.image_url |e}}" alt="art image">
@@ -60,7 +60,10 @@
           <h2 class="mb-3"><span class="post_title">{{post.plant_name |e}}</span></h2>
           <p>Location</p>
           <p> <span>{{post.author |e}}</span> </p>
-          <p> <span>{{post.price._id |e}}</span> </p>
+          <p>$<span>{{post.price |e}}</span> </p>
+          <p><span>{{post.description |e}}</span> </p>
+          <span>{{post.category |e}}</span> <br> <!-- need style -->
+          <span>{{post.lighting |e}}</span> <br> <!-- need style -->
           <div class="d-inline-block mb-2 text-primary">
             <a href="/delete/{{post._id}}" class="btn btn-outline-dark">Delete</a>
             <a href="/edit/{{post._id}}" class="btn btn-outline-dark">Edit</a>
@@ -68,7 +71,7 @@
         </div>
 
       </div>
-      <!-- {% endfor %} -->
+
     </div>
 
 

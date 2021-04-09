@@ -23,12 +23,26 @@ const postSchema = new Schema({
         default: Date.now
     },
     author: { 
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'User'
+        type: String
     },
     category: {
         type: String,
+    },
+    lighting: {
+        type: String, 
+    },
+    watering: {
+        type: String,
+    },
+    temperature: {
+        type: String, 
+    },
+    size: {
+        type: String,
     }
+
+
+
     
 
     },{

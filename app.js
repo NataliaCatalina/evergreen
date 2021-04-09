@@ -174,18 +174,15 @@ app.post("/login", passport.authenticate("local",{
 ////////////////////
 
 app.post('/list', (req, res) => {
+    // console.log('request')
     new Post({
         plant_name:req.body.plant_name,
         description:req.body.description,
         price:req.body.price,
         image_url:req.body.image_url,
-        // Indoor:req.body.Indoor,
-        // Outdoor:req.body.Outdoor,
-        // Ferns:req.body.Ferns,
-        // Trees:req.body.Trees,
-        // Tropical:req.body.Tropical,
-        // Cacti:req.body.Cacti,
-
+        category:req.body.category,
+        author:req.body.author,
+        lighting:req.body.lighting
     })
     .save()
     .then(result => {
@@ -301,7 +298,25 @@ app.get('/plant/:id', (req, res) => {
     .then(result => {
         if(result){
               res.render('plant',{
-                allpost:result
+                post:result
+            });
+        }
+        else{
+            res.redirect('/');
+        }
+    })
+    .catch(err => {
+        res.redirect('/');
+    });
+});
+
+// UPDATE POST
+app.get('/edit/:id', (req, res) => {
+    Post.findById(req.params.id)
+    .then(result => {
+        if(result){
+            res.render('edit',{
+                post:result
             });
         }
         else{
