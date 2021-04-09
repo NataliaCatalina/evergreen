@@ -133,6 +133,9 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
     app.get("/account", (req,res) =>{
         res.render("account")
     })
+    app.get("/success", (req,res) =>{
+        res.render("success")
+    })
 
     
 

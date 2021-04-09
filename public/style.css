@@ -116,7 +116,7 @@ p{
 
   /*CATEGORY*/
   .hidden {position:absolute;visibility:hidden;opacity:0;}
-    input[type=checkbox] + label {
+    input[type=radio] + label {
     color: black;
     font-style: italic;
     border: 2px solid #77D0D6;
@@ -125,7 +125,7 @@ p{
     border-radius: 15px;
     background-color: #DEFFEF;
   }  
-  input[type=checkbox]:checked + label {
+  input[type=radio]:checked + label {
     color: black;
     font-style: normal;
     border: 2px solid #DEFFEF;
@@ -265,6 +265,9 @@ display: block;
   width: 80%;
   margin-left: 10%;
 }
+.loginButtonHome:hover {
+  background-color: #236F99;
+}
 
 .signupButtonHome {
   text-align: center; 
@@ -274,6 +277,9 @@ display: block;
   color:#DEEDED;
   width: 80%;
   margin-left: 10%;
+}
+.signupButtonHome:hover {
+  background-color: #236F99;
 }
 
 .justbrowsingButtonHome {
@@ -285,6 +291,9 @@ display: block;
   width: 80%;
   margin-left: 10%;
 }
+.justbrowsingButtonHome:hover {
+  background-color: #236F99;
+}
 
 .logoHome {
   width: auto;
@@ -293,4 +302,69 @@ display: block;
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+
+
+/* dashbaord list an item button - Alex */
+
+.plusButton {
+  position: fixed;
+  bottom: 60px;
+  right: 105px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #236F99;
+  color: #DEEDED;
+  cursor: pointer;
+  padding: 8px 20px 8px 20px;
+  border-radius: 30px;
+}
+
+.plusButton:hover {
+  background-color: #236F99;
+}
+.plusIcon {
+  margin-left: 5px;
+}
+
+/* success page - Alex */
+
+.backToButton {
+  text-align: center; 
+  margin-top: 25px;
+  background:#236F99 ;
+  border-radius: 20px;
+  color:#DEEDED;
+  width: 150px;
+}
+.backToButton:hover {
+  background-color: #236F99;
+}
+
+.logoImageSuccess {
+  width: 250px;
+  height: auto;
+}
+
+.success-control {
+  width: 40%;
+  border-radius: 15px;
+  padding: 50px;
+}
+@media only screen and (max-width: 1024px) {
+  .success-control {
+    width: 60%;
+    border-radius: 15px;
+    padding: 50px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .success-control {
+    width: 80%;
+    border-radius: 15px;
+    padding: 50px;
+  }
 }
