@@ -22,11 +22,6 @@
       <a href="dashboard" class="navbar-brand d-flex align-items-center">
         <strong>Evergreen</strong>
       </a>
-      <div class="text">
-        {% if user %}
-        <p>Hello {{user.username |e}}!</p>
-        {% endif %}
-      </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <a id="navIcon"><i class="col fas fa-bars"></i></a>
       </button>
@@ -37,9 +32,17 @@
     <nav id="mainNav" class="navbar-primary">
       <ul class="navbar-primary-menu">
         <li>
-          <a href="/"><span class="nav-label">Home</span></a>
+          <a href="/"><span class="nav-label" id="home">Home</span></a>
+          <!-- {% if user %}
+            <style>
+               #home {
+               display:none;
+               }
+            </style>
+                <a href="/dashboard"><span class="nav-label">Home</span></a>
+            {% endif %} -->
           <a href="account"><span class="nav-label">Profile</span></a>
-          <a href="/about"><span class="nav-label">About</span></a>
+          <a href="#"><span class="nav-label">About</span></a>
           <a href="list"><span class="nav-label">List a Plant</span></a>
           <a href="/logout"><span class="nav-label">Logout</span></a>
         </li>
@@ -47,18 +50,21 @@
     </nav>
   </section> 
 
-  <!-- LIST -->          
-  <div class="container mt-5">
-      <!-- <div class="container-fluid"> -->
-      {% for post in allpost %}
-        <div class="row border border-success d-inline"></div>
-        <a href="/plant/{{post._id}}"><img class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 img-fluid" src="{{post.image_url |e}}" alt="art image"></a>
-        {% endfor %}
-      <!-- </div> -->
-  </div>
+    <!-- MAKE A LIST -->
+    <div class="container mt-5 second-background success-control">
+        <div class="row">
+            <div class="col">
+                <img src="evergreen-logo.png" alt="evergreen logo image" class="logoImageSuccess">
+            </div>
+            <div class="col">
+                <h1>Success!</h1>
+                <p>Your request is been processed, Claude  will constact you soon. Thanks for using Evergreen</p>
+                <a class="backToButton btn btn-primary mt-5" onclick="goBack()">Back to listing</a>
+            </div>
+        </div>
+      
+    </div>
 
-  <a href="list" class="plusButton btn btn-primary" title="List an item">List an item  <i class="fas fa-plus fa-2x align-middle plusIcon"></i></a>
-  <!-- <h3 class="d-inline align-baseline">+</h3> -->
 
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"> </script>
