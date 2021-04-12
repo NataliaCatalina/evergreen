@@ -70,17 +70,17 @@
         <!-- Category -->
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
             <h4 class="categoryHeading mb-3">Category</h4>
-            <input type="radio" id="indoor" name="category" value="indoor">
+            <input type="radio" class="hidden" id="indoor" name="category" value="indoor">
             <label for="indoor">Indoor</label>
-            <input type="radio" id="outdoor" name="category" value="outdoor">
+            <input type="radio" class="hidden" id="outdoor" name="category" value="outdoor">
             <label for="outdoor">Outdoor</label>
-            <input type="radio" id="ferns" name="category" value="ferns">
+            <input type="radio" class="hidden" id="ferns" name="category" value="ferns">
             <label for="ferns">Ferns</label><br>
-            <input type="radio" id="trees" name="category" value="trees">
+            <input type="radio" class="hidden" id="trees" name="category" value="trees">
             <label for="trees">Trees</label>
-            <input type="radio" id="tropical" name="category" value="tropical">
+            <input type="radio" class="hidden" id="tropical" name="category" value="tropical">
             <label for="tropical">Tropical</label>
-            <input type="radio" id="cacti" name="category" value="cacti">
+            <input type="radio" class="hidden" id="cacti" name="category" value="cacti">
             <label for="cacti">Cacti</label><br>
 
 
@@ -130,6 +130,7 @@
                   <option class="dropdown-item" href="#">Medium</option>  
                   <option class="dropdown-item" href="#">Large</option>  
               </select>  
+            </div> 
 
             <!-- Trade -->
             <div class="container tradebtns">
@@ -150,10 +151,10 @@
               </div>
             </div>
         </div>
-
-
-        <button class="btn submit-btn col-2 m-5 primarybtn" type="submit" id="submit-btn" value="POST">Post</button>
-        <a class="cancelButton m-5" onclick="goBack()">Cancel</a>
+        <div>
+          <button class="btn submit-btn col-2" type="submit" id="submit-btn" value="POST">Post</button>
+          <a class="cancelButton" onclick="goBack()">Cancel</a>
+        </div>
       </form>
 
 

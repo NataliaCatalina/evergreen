@@ -18,6 +18,12 @@ h1, h2, h3, h4, h5, h6, label, p{
   background-color: #ECF6F6;
 }
 
+@media only screen and (max-width: 400px) {
+  .second-background {
+    background-color: #DEEDED;
+  }
+}
+
 /*********************************** NAVBAR */
 
 nav{
@@ -58,10 +64,27 @@ nav{
     border-radius: 25px;
   }
 
-  .form-input{
-    border: none;
-    border-bottom: 1px solid #053642;
-    outline: none;
+  @media only screen and (max-width: 400px) {
+    .form-container {
+      background-color: #DEEDED;
+    }
+  }
+
+  /* .form-input{
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: black;
+  } */
+  #username, #password, #phone, #email {
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: black;
+    fill: none;
+    background: transparent;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
   }
 
 
@@ -142,12 +165,21 @@ nav{
     border-color: black;
     fill: none;
     background: transparent;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
   }
 
   
-  .submitbtn {
+  .submit-btn {
     text-align: center; 
-    margin-top: 50px;
+    margin-top: 3em;
+    margin-left: 3em;
+    margin-right: 3em;
+    background:#236F99 ;
+    border-radius: 20px;
+    color:#DEEDED;
   }
 
   .insert_post input[type='text'],
@@ -174,6 +206,9 @@ nav{
     color: #053642;
     text-decoration: none;
     float: right;
+    margin-top: 3em;
+    margin-left: 3em;
+    margin-right: 3em;
   }
 
   .cancelButton:hover {
@@ -187,40 +222,24 @@ nav{
     margin-top: 50px;
   }
 
-
-/********************************************** Dropdown Content (Hidden by Default) */
-/* .dropdown-content {
-display: none;
-position: absolute;
-background-color: #f1f1f1;
-min-width: 160px;
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-z-index: 1;
-} */
-
-/* ******************************************Links inside the dropdown */
-/* .dropdown-content a {
-color: white;
-padding: 12px 16px;
-text-decoration: none;
-display: block;
-} */
-
-/*************************************** Change color of dropdown links on hover */
-/* .dropdown-content a:hover {background-color: #ddd;} */
-
-/* Show the dropdown menu on hover */
-/* .dropdown:hover .dropdown-content {display: block;} */
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-/* .dropdown:hover .dropbtn {background-color: #F35B54;} */
-
-/* This align the icon to the right */
-/* #icon{
-  align-items: right;
-} */
-
-
+  @media only screen and (max-width: 400px) {
+    .submit-btn {
+      width: 100%;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    .cancelButton {
+      margin-left: 0px;
+      margin-right: 0px;
+      text-align: center;
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    .dropbtn {
+      width: 65px;
+      height: 41px;
+      } 
+  }
 
 
 /* Home page - Alex */
