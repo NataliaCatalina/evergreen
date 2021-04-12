@@ -13,6 +13,7 @@ h1, h2, h3, h4, h5, h6, label, p{
   color: #053642;
 }
 /*********************************** Colors*/
+
 .second-background {
   background-color: #ECF6F6;
 }
@@ -23,45 +24,20 @@ h1, h2, h3, h4, h5, h6, label, p{
   }
 }
 
+/*********************************** NAVBAR */
 
-
-/*********************************** NAVBAR (NATALLIA) */
-
-.navbar-primary {
-  bottom: 0px;
-  left: 0px;
-  position: absolute;
-  top: 51px;
-  width: 200px;
-  z-index: 8;
-  overflow: hidden;
+nav{
+  background-color: #ECF6F6;
 }
 
-.navbar-primary-menu,
-.navbar-primary-menu li {
-  margin:0;
-  padding:0;
-  list-style: none;
-}
-
-.navbar-primary-menu li a {
-  display: block;
-  padding: 10px 18px;
-  text-align: left;
-  border-bottom:solid 1px #444;
+.fa-bars {
   color: #053642;
-  text-decoration: none;
+  font-size: 40px;
 }
 
-.navbar-primary-menu li a:hover {
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.main-content {
-  margin-top: 60px;
-  margin-left: 200px;
-  padding: 20px;
+.logoNav {
+  width: 100px;
+  height: auto;
 }
 
 
@@ -264,42 +240,6 @@ h1, h2, h3, h4, h5, h6, label, p{
       height: 41px;
       } 
   }
-
-
-
-/********************************************** Dropdown Content (Hidden by Default) */
-/* .dropdown-content {
-display: none;
-position: absolute;
-background-color: #f1f1f1;
-min-width: 160px;
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-z-index: 1;
-} */
-
-/* ******************************************Links inside the dropdown */
-/* .dropdown-content a {
-color: white;
-padding: 12px 16px;
-text-decoration: none;
-display: block;
-} */
-
-/*************************************** Change color of dropdown links on hover */
-/* .dropdown-content a:hover {background-color: #ddd;} */
-
-/* Show the dropdown menu on hover */
-/* .dropdown:hover .dropdown-content {display: block;} */
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-/* .dropdown:hover .dropbtn {background-color: #F35B54;} */
-
-/* This align the icon to the right */
-/* #icon{
-  align-items: right;
-} */
-
-
 
 
 /* Home page - Alex */
