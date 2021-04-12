@@ -17,6 +17,12 @@ h1, h2, h3, h4, h5, h6, label, p{
   background-color: #ECF6F6;
 }
 
+@media only screen and (max-width: 400px) {
+  .second-background {
+    background-color: #DEEDED;
+  }
+}
+
 
 
 /*********************************** NAVBAR (NATALLIA) */
@@ -82,10 +88,27 @@ h1, h2, h3, h4, h5, h6, label, p{
     border-radius: 25px;
   }
 
-  .form-input{
-    border: none;
-    border-bottom: 1px solid #053642;
-    outline: none;
+  @media only screen and (max-width: 400px) {
+    .form-container {
+      background-color: #DEEDED;
+    }
+  }
+
+  /* .form-input{
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: black;
+  } */
+  #username, #password, #phone, #email {
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: black;
+    fill: none;
+    background: transparent;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
   }
 
 
@@ -166,12 +189,21 @@ h1, h2, h3, h4, h5, h6, label, p{
     border-color: black;
     fill: none;
     background: transparent;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
   }
 
   
-  .submitbtn {
+  .submit-btn {
     text-align: center; 
-    margin-top: 50px;
+    margin-top: 3em;
+    margin-left: 3em;
+    margin-right: 3em;
+    background:#236F99 ;
+    border-radius: 20px;
+    color:#DEEDED;
   }
 
   .insert_post input[type='text'],
@@ -198,6 +230,9 @@ h1, h2, h3, h4, h5, h6, label, p{
     color: #053642;
     text-decoration: none;
     float: right;
+    margin-top: 3em;
+    margin-left: 3em;
+    margin-right: 3em;
   }
 
   .cancelButton:hover {
@@ -210,6 +245,26 @@ h1, h2, h3, h4, h5, h6, label, p{
   .tradebtns {
     margin-top: 50px;
   }
+
+  @media only screen and (max-width: 400px) {
+    .submit-btn {
+      width: 100%;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    .cancelButton {
+      margin-left: 0px;
+      margin-right: 0px;
+      text-align: center;
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    .dropbtn {
+      width: 65px;
+      height: 41px;
+      } 
+  }
+
 
 
 /********************************************** Dropdown Content (Hidden by Default) */
