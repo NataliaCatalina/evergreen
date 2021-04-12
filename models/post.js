@@ -23,7 +23,7 @@ const postSchema = new Schema({
         default: Date.now
     },
     author: { 
-        type: String
+        type: String,
     },
     category: {
         type: String,

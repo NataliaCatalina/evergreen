@@ -36,6 +36,7 @@ app.set('views','views');
 
 //Natalia-database
 const MONGODB_URL = 'mongodb+srv://test:Password@cluster0.7bulh.mongodb.net/plantsDatabase?retryWrites=true&w=majority';
+//Alex-database
 // const MONGODB_URL = 'mongodb+srv://test:test123@cluster0.8tyse.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.connect(MONGODB_URL, { useUnifiedTopology: true });
 
@@ -190,7 +191,7 @@ app.post('/list', (req, res) => {
         price:req.body.price,
         image_url:req.body.image_url,
         category:req.body.category,
-        author:req.body.author,
+        author:req.user.username,
         lighting:req.body.lighting
     })
     .save()
@@ -264,6 +265,7 @@ app.get('/edit/:id', (req, res) => {
         if(result){
               res.render('edit',{
                 post:result
+
             });
         }
         else{
@@ -302,12 +304,14 @@ app.post('/edit/:id', (req, res) => {
 // GO TO PLANT PROFILE//
 ////////////////////////
 app.get('/plant/:id', (req, res) => {
-    
+
     Post.findById(req.params.id)
+
     .then(result => {
         if(result){
               res.render('plant',{
-                post:result
+                post:result,
+                user:req.user
             });
         }
         else{
