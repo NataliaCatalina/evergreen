@@ -16,73 +16,62 @@
 </head>
 <body>
 
-  <!-- NAV -->
-  <div class="navbar bg-transparent box-shadow">
-    <div class="container d-flex justify-content-between">
-      <a href="dashboard" class="navbar-brand d-flex align-items-center">
-        <strong>Evergreen</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <a id="navIcon"><i class="col fas fa-bars"></i></a>
-      </button>
+    <!-- NAVBAR -->
+    <div class="pos-f-t">
+      <div class="collapse" id="navbarToggleExternalContent">
+        <div class="p-4">
+          <ul class="navbar-nav me-auto mb-1">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="signup">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <nav class="navbar navbar-dark">
+        <a class="navbar-brand mr-2" href="/"><img class="logoNav" src="evergreen-logo.png" alt="vergreen logo image"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars ml-2"></i>
+        </button>
+      </nav>
     </div>
-  </div>
 
-  <section id="navPanel">
-    <nav id="mainNav" class="navbar-primary">
-      <ul class="navbar-primary-menu">
-        <li>
-          <a href="/"><span class="nav-label">Home</span></a>
-          <a href="account"><span class="nav-label">Profile</span></a>
-          <a href="/about"><span class="nav-label">About</span></a>
-          <a href="list"><span class="nav-label">List a Plant</span></a>
-          <a href="/logout"><span class="nav-label">Logout</span></a>
-        </li>
-      </ul>
-    </nav>
-  </section> 
 
+  <!-- LOGING -->
   <div class="container mt-5">
-
     <div class="form-container">
       <div class="row">
 
-
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-        <form action="/login" method="POST" class="form-signin m-5 p-5">
-          <h1 class="mt-5 mb-5">Login</h1>
-          <p class="">Enter your username & password</p>
-        
-          <div class="form-label-group">
-            <label class="fs-6 fw-bold" for="username">Username</label>
-            <input type="text" id="username" class="form-control mb-5 form-input" name="username" required autofocus>
-          </div>
-          <div class="form-label-group">
-            <label class="fs-6 fw-bold" for="password">Password</label>
-            <input type="password" id="password" class="form-control mb-5 form-input" name="password" required>
-          </div>
-          <div class="d-flex justify-content-left">
-            <button class="primary-btn btn submit-btn col-6">Login</button>
-          </div>
+          <form action="/login" method="POST" class="form-signin m-5 p-5">
+            <h1 class="mt-5 mb-5">Login</h1>
+            <p class="">Enter your username & password</p>
+            
+            <div class="form-label-group">
+              <label class="fs-6 fw-bold" for="username">Username</label>
+              <input type="text" id="username" class="form-control mb-5 form-input" name="username" required autofocus>
+            </div>
+            <div class="form-label-group">
+              <label class="fs-6 fw-bold" for="password">Password</label>
+              <input type="password" id="password" class="form-control mb-5 form-input" name="password" required>
+            </div>
+            <div class="d-flex justify-content-left">
+              <button class="primary-btn btn submit-btn col-6">Login</button>
+            </div>
+          </form>
         </div>
 
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <img src="images/evergreenlogo.png" alt="tree">
-          </div>
-        
-      </form>
-    
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <img src="images/evergreenlogo.png" alt="tree">
+        </div>
+      </div>
+    </div>
   </div>
-    
-  </div>
-
-
-
-
-
-  
-
-
 
 
 

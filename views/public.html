@@ -12,44 +12,52 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
       <!-- own style -->
       <link rel="stylesheet" href="../style.css">
-      <title>Dashboard</title>
+      <title>Public</title>
 </head>
 <body>
-  <!-- NAV -->
-<div class="navbar bg-transparent box-shadow">
-    <div class="container d-flex justify-content-between">
-      <a href="dashboard" class="navbar-brand d-flex align-items-center">
-        <strong>Evergreen</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <a id="navIcon"><i class="col fas fa-bars"></i></a>
-      </button>
+
+  <!-- NAVBAR -->
+  <div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="p-4">
+        <ul class="navbar-nav me-auto mb-1">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup">signup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login">Login</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-
-  <section id="navPanel">
-    <nav id="mainNav" class="navbar-primary">
-      <ul class="navbar-primary-menu">
-        <li>
-          <a href="/"><span class="nav-label">Home</span></a>
-          <a href="/about"><span class="nav-label">About</span></a>
-          <a href="/signup"><span class="nav-label">Signup</span></a>
-          <a href="/login"><span class="nav-label">Login</span></a>
-        </li>
-      </ul>
+    <nav class="navbar navbar-dark">
+      <a class="navbar-brand mr-2" href="/"><img class="logoNav" src="evergreen-logo.png" alt="vergreen logo image"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars ml-2"></i>
+      </button>
     </nav>
-  </section>  
-
-  <!-- LIST -->          
-  <div class="container mt-5">
-      {% for post in allpost %}
-        <div class="row border border-success d-inline"></div>
-        <a href="/plant/{{post._id}}"><img class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 img-fluid" src="{{post.image_url |e}}" alt="art image"></a>
-        {% endfor %}
   </div>
 
 
+  <!-- LIST -->    
+  <div class="row" data-masonry="{&quot;percentPosition&quot;: true }" style="position: relative; height: 690px;">
+    {% for post in allpost %}
+    <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;">
+      <div class="card">
+        <a href="/plant/{{post._id}}">
+          <img class="card-img-top" src="{{post.image_url |e}}" alt="plant image">
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 
+    <!-- Masonry grid system -->
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+  
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
