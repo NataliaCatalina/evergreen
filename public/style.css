@@ -205,6 +205,7 @@ nav{
     background:#236F99 ;
     border-radius: 20px;
     color:#DEEDED;
+    float: right;
   }
 
   .insert_post input[type='text'],
