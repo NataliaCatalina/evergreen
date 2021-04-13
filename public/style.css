@@ -109,7 +109,7 @@ nav{
 
   /*CATEGORY*/
   .hidden {position:absolute;visibility:hidden;opacity:0;}
-    input[type=radio] + .category-btn {
+    input[type=radio] + label {
     color: black;
     font-style: italic;
     border: 2px solid #77D0D6;
@@ -118,7 +118,7 @@ nav{
     border-radius: 15px;
     background-color: #DEFFEF;
   }  
-  input[type=radio]:checked + .category-btn {
+  input[type=radio]:checked + label {
     color: black;
     font-style: normal;
     border: 2px solid #DEFFEF;
@@ -246,8 +246,6 @@ nav{
   .tradebtns {
     margin-top: 50px;
   }
-
-  
 
   @media only screen and (max-width: 400px) {
     .submit-btn {
@@ -383,25 +381,3 @@ nav{
     padding: 50px;
   }
 }
-
-/* Plant Profile Page */
-
-.plant-category {
-    color: black;
-    font-style: italic;
-    border: 2px solid #77D0D6;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 15px;
-    background-color: #DEFFEF;
-  }  
-
-  .plant-lighting{
-    background-color: #F35B54;
-    color: white;
-    font-size: 16px;
-    border-width: 0 0 1px;
-    border-radius: 1px;
-    padding: 5px;
-    margin: 5px;
-  }

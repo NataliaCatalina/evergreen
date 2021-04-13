@@ -67,19 +67,31 @@
           <h2>$<span>{{post.price |e}}</span></h2>
           <p><span>{{post.description |e}}</span> </p>
           <span class="plant-category">{{post.category |e}}</span><br>
-          <button type="button" class="dropbtn">  
-            <i class="fas fa-cloud-sun fa-lg"></i>
+          <div class="careIcons">  
+          <div class="dropbtn text-center">  
+            <i class="fas fa-cloud-sun fa-lg"></i><br>
             <span >{{post.lighting |e}}</span>
-          </button>  
-          <button type="button" class="dropbtn">  
-            <i class="fas fa-tint fa-lg"></i>
+          </div>  
+        </div>  
+        <div class="careIconsDiv">  
+          <div class="careIcons text-center">  
+            <i class="fas fa-tint fa-lg"></i><br>
             <span >{{post.watering |e}}</span>
-          </button>  
-          <button type="button" class="dropbtn">  
+          </div>  
+        </div>  
+        <div class="careIcons">  
+          <div class="dropbtn text-center">  
             <i class="fas fa-thermometer-half fa-lg"></i>
             <span >{{post.temperature |e}}</span>
-          </button>  
-          <div class="d-inline-block mb-2 text-primary">
+          </div>  
+        </div>  
+        <div class="careIcons">  
+          <div class="dropbtn text-center">  
+            <i class="fas fa-ruler fa-lg"></i>
+            <span >{{post.temperature |e}}</span>
+          </div>  
+        </div>  
+          <div class="mb-2 text-primary">
             <a href="/delete/{{post._id}}" class="btn btn-outline-dark">Delete</a>
             <a href="/edit/{{post._id}}" class="btn btn-outline-dark">Edit</a>
           </div>
