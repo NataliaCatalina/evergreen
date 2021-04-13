@@ -64,7 +64,15 @@
           <h2 class="mb-3"><span class="post_title">{{post.plant_name |e}}</span></h2>
           <p>Location</p>
           <p>By <span>{{post.author |e}}</span> </p>
-          <p><span>{{post.trade |e}}</span> </p>
+          {% if post.trade == "both" %} 
+          <span><i class="fas fa-dollar-sign"></i><i class="fas fa-exchange-alt"></i></span>
+          {% endif %}
+          {% if post.trade == "trade" %} 
+          <span><i class="fas fa-exchange-alt"></i></span>
+          {% endif %}
+          {% if post.trade == "sell" %} 
+          <span><i class="fas fa-dollar-sign"></i></i></span>
+          {% endif %}
           <h2>$<span>{{post.price |e}}</span></h2>
           <p><span>{{post.description |e}}</span> </p>
           <span class="plant-category">{{post.category |e}}</span><br>
