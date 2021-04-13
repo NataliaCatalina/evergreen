@@ -64,11 +64,12 @@
           <h2 class="mb-3"><span class="post_title">{{post.plant_name |e}}</span></h2>
           <p>Location</p>
           <p>By <span>{{post.author |e}}</span> </p>
+          <p><span>{{post.trade |e}}</span> </p>
           <h2>$<span>{{post.price |e}}</span></h2>
           <p><span>{{post.description |e}}</span> </p>
           <span class="plant-category">{{post.category |e}}</span><br>
-          <div class="careIcons">  
-          <div class="dropbtn text-center">  
+          <div class="careIconsDiv">  
+          <div class="careIcons text-center">  
             <i class="fas fa-cloud-sun fa-lg"></i><br>
             <span >{{post.lighting |e}}</span>
           </div>  
@@ -79,16 +80,16 @@
             <span >{{post.watering |e}}</span>
           </div>  
         </div>  
-        <div class="careIcons">  
-          <div class="dropbtn text-center">  
-            <i class="fas fa-thermometer-half fa-lg"></i>
+        <div class="careIconsDiv">  
+          <div class="careIcons text-center">  
+            <i class="fas fa-thermometer-half fa-lg"></i><br>
             <span >{{post.temperature |e}}</span>
           </div>  
         </div>  
-        <div class="careIcons">  
-          <div class="dropbtn text-center">  
-            <i class="fas fa-ruler fa-lg"></i>
-            <span >{{post.temperature |e}}</span>
+        <div class="careIconsDiv">  
+          <div class="careIcons text-center">  
+            <i class="fas fa-ruler fa-lg"></i><br>
+            <span >{{post.size |e}}</span>
           </div>  
         </div>  
           <div class="mb-2 text-primary">

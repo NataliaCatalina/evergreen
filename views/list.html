@@ -125,13 +125,12 @@
             <div class="dropdown">  
               <button type="button" class="dropbtn" data-toggle="dropdown" id="sizeButton">  
                 <i class="fas fa-ruler fa-lg"></i>
-                <select for="size" class="dropdown-menu" name="size" id="size">
+              </button>  
+                <select for="size" class="dropdown-menu" name="size" id="size" style="display:none;">
                     <option class="dropdown-item" href="#">Small</option>  
                     <option class="dropdown-item" href="#">Medium</option>  
                     <option class="dropdown-item" href="#">Large</option>  
                 </select>  
-              </button>  
-
             </div> 
 
             <!-- Trade -->
@@ -139,8 +138,7 @@
               <div class="row">
                 <div class="col text-center">
                   <label for="sell">Sell $</label><br>
-                  <input type="checkbox" class="checkbox-round" name="trade" id="sell" value="sell">
-                </div>
+                  <input type="checkbox" class="checkbox-round" name="trade" id="sell" value='<i class="fas fa-dollar-sign"></i>'>                </div>
                 <div class="col text-center">
                   <label for="trade">Trade</label><br>
                   <input type="checkbox" class="checkbox-round" name="trade" id="trade" value="trade">
