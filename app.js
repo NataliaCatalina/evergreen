@@ -210,7 +210,59 @@ app.get("/list", (req,res) =>{
     res.render('list', {
         user: req.user
     });
-})
+});
+
+/////////////////////
+// UPDATE A PLANT //
+////////////////////
+
+app.get('/edit/:id', (req, res) => {
+    Post.findById(req.params.id)
+    .then(result => {
+        if(result){
+              res.render('edit',{
+                post:result
+            });
+        }
+        else{
+            res.redirect('/dashboard');
+        }
+    })
+    .catch(err => {
+        res.redirect('dashboard');
+    });
+});
+
+//UPDATE POST
+app.post('/edit/:id', (req, res) => {
+    Post.findById(req.params.id)
+    .then(result => {
+        if(result){
+            result.plant_name = req.body.plant_name;
+            result.description = req.body.description;
+            result.price = req.body.price;
+            result.image_url = req.body.image_url;
+            result.category = req.body.category;
+            result.author = req.body.author;
+            result.lighting = req.body.lighting;
+            result.watering = req.body.watering;
+            result.temperature = req.body.temperature;
+            result.size = req.body.size;
+            result.trade = req.body.trade;
+            return result.save();
+        }
+        else{
+            console.log(err);
+            res.redirect('/dashboard');
+        }
+    })
+    .then(update => {
+        res.redirect('/dashboard');
+    })
+    .catch(err => {
+        res.redirect('/dashboard');
+    });
+});
 
 ////////////////////////
 // DISPLAY PLANT LIST //
@@ -263,50 +315,7 @@ app.get('/delete/:id', (req, res) => {
 });
 
 
-/////////////////////
-// UPDATE A PLANT //
-////////////////////
 
-app.get('/edit/:id', (req, res) => {
-    Post.findById(req.params.id)
-    .then(result => {
-        if(result){
-              res.render('edit',{
-                post:result
-
-            });
-        }
-        else{
-            res.redirect('/dashboar');
-        }
-    })
-    .catch(err => {
-        res.redirect('dashboar');
-    });
-});
-
-//UPDATE POST
-app.post('/edit/:id', (req, res) => {
-    Post.findById(req.params.id)
-    .then(result => {
-        if(result){
-            result.plant_name = req.body.plant_name;
-            result.description = req.body.description;
-            result.price = req.body.price;
-            return result.save();
-        }
-        else{
-            console.log(err);
-            res.redirect('/dashboar');
-        }
-    })
-    .then(update => {
-        res.redirect('/dashboard');
-    })
-    .catch(err => {
-        res.redirect('/dashboar');
-    });
-});
 
 //////////////////////////
 // GO TO PLANT PROFILE//

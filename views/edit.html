@@ -10,154 +10,174 @@
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
       <!-- Fontawesome icons -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"/>
       <!-- own style -->
       <link rel="stylesheet" href="../style.css">
       <title>Dashboard</title>
-</head>
-<body>
+  </head>
+  <body>
 
-  <!-- NAV -->
-  <div class="navbar bg-transparent box-shadow">
-    <div class="container d-flex justify-content-between">
-      <a href="dashboard" class="navbar-brand d-flex align-items-center">
-        <strong>Evergreen</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <a id="navIcon"><i class="col fas fa-bars"></i></a>
-      </button>
-    </div>
-  </div>
 
-  <section id="navPanel">
-    <nav id="mainNav" class="navbar-primary">
-      <ul class="navbar-primary-menu">
-        <li>
-          <a href="/"><span class="nav-label">Home</span></a>
-          <a href="account"><span class="nav-label">Profile</span></a>
-          <a href="about"><span class="nav-label">About</span></a>
-          <a href="list"><span class="nav-label">List a Plant</span></a>
-          <a href="/logout"><span class="nav-label">Logout</span></a>
-        </li>
-      </ul>
-    </nav>
-  </section> 
+      <!-- NAV -->
+      <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+          <div class="p-4">
+            <ul class="navbar-nav me-auto mb-1">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="account">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="list">List a Plant</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="logout">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="navbar navbar-dark">
+          <a class="navbar-brand mr-2" href="/"><img class="logoNav" src="evergreen-logo.png" alt="vergreen logo image"></a>
+          <div class="text">
+            {% if user %}
+            <p>Hello {{user.username |e}}!</p>
+            {% endif %}
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars ml-2"></i>
+          </button>
+        </nav>
+      </div>
 
     <!-- MAKE A LIST -->
     <div class="container mt-5 second-background list-control">
    
       <form class="row insert_post" action="" method="POST">
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-          <h1 class="mt-5 mb-5 font-color" >Edit</h1>
+          <h1 class="mt-5 mb-5 font-color" >List an item</h1>
           <div class="form-label-group">
             <label class="font-color" for="plant_name">Plant Name</label>
-            <input type="text" id="plant_name" class="form-control mb-2" name="plant_name"  autofocus>
+            <input type="text" id="plant_name" class="form-control mb-2" name="plant_name"  required autofocus>
           </div>
           <div class="form-label-group">
             <label class="font-color" for="description">Description</label>
-            <input type="text" id="description" class="form-control mb-2" name="description" >
+            <input type="text" id="description" class="form-control mb-2" name="description" required>
           </div>
           <div class="form-label-group">
             <label class="font-color" for="price">Price</label>
-            <input type="text" id="price" class="form-control mb-2" name="price" >
+            <input type="text" id="price" class="form-control mb-2" name="price" required>
           </div>
           <div class="form-label-group">
             <label class="font-color" for="image_url">Image URL</label>
-            <input type="text" id="image_url" class="form-control mb-2" name="image_url">
+            <input type="text" id="image_url" class="form-control mb-2" name="image_url" required>
           </div>
         </div>
 
+        
+        <!-- Category -->
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <a class="cancelButton" onclick="goBack()"><i class="fas fa-2x fa-times"></i></a>
             <h4 class="categoryHeading mb-3">Category</h4>
-            <input type="checkbox" class="hidden" name="Indoor" id="Indoor">
-            <label for="Indoor">Indoor</label>
-            <input type="checkbox" class="hidden" name="Outdoor" id="Outdoor">
-            <label for="Outdoor">Outdoor</label>
-            <input type="checkbox" class="hidden" name="Ferns" id="Ferns">
-            <label for="Ferns">Ferns</label><br>
-            <input type="checkbox" class="hidden" name="Trees" id="Trees">
-            <label for="Trees">Trees</label>
-            <input type="checkbox" class="hidden" name="Tropical" id="Tropical">
-            <label for="Tropical">Tropical</label>
-            <input type="checkbox" class="hidden" name="Cacti" id="Cacti">
-            <label for="Cacti">Cacti</label><br>
+            <input type="radio" class="hidden" id="indoor" name="category" value="indoor">
+            <label for="indoor">Indoor</label>
+            <input type="radio" class="hidden" id="outdoor" name="category" value="outdoor">
+            <label for="outdoor">Outdoor</label>
+            <input type="radio" class="hidden" id="ferns" name="category" value="ferns">
+            <label for="ferns">Ferns</label><br>
+            <input type="radio" class="hidden" id="trees" name="category" value="trees">
+            <label for="trees">Trees</label>
+            <input type="radio" class="hidden" id="tropical" name="category" value="tropical">
+            <label for="tropical">Tropical</label>
+            <input type="radio" class="hidden" id="cacti" name="category" value="cacti">
+            <label for="cacti">Cacti</label><br>
 
+
+            <!-- Care -->
             <h4 class="careHeading">Care</h4>
+            <!-- Lighting -->
             <div class="dropdown">  
-              <button type="button" class="dropbtn" data-toggle="dropdown">  
-                <i class="fas fa-ruler fa-lg"></i>
-              </button>  
-              <div class="dropdown-menu">  
-                  <a class="dropdown-item" href="#"> 1 </a>  
-                  <a class="dropdown-item" href="#"> 2 </a>  
-                  <a class="dropdown-item" href="#"> 3 </a>  
-                  <a class="dropdown-item" href="#"> 4 </a>  
-              </div>  
-            </div> 
-            <div class="dropdown">  
-              <button type="button" class="dropbtn" data-toggle="dropdown">  
-                <i class="fas fa-tint fa-lg"></i>
-              </button>  
-              <div class="dropdown-menu">  
-                  <a class="dropdown-item" href="#"> 1 </a>  
-                  <a class="dropdown-item" href="#"> 2 </a>  
-                  <a class="dropdown-item" href="#"> 3 </a>  
-                  <a class="dropdown-item" href="#"> 4 </a>  
-              </div>  
-            </div> 
-            <div class="dropdown">  
-              <button type="button" class="dropbtn" data-toggle="dropdown">  
+              <button type="button" class="dropbtn" data-toggle="dropdown" id="lightingButton">  
                 <i class="fas fa-cloud-sun fa-lg"></i>
               </button>  
-              <div class="dropdown-menu">  
-                  <a class="dropdown-item" href="#"> 1 </a>  
-                  <a class="dropdown-item" href="#"> 2 </a>  
-                  <a class="dropdown-item" href="#"> 3 </a>  
-                  <a class="dropdown-item" href="#"> 4 </a>  
-              </div>  
+              <select for="lighting" class="dropdown-menu" name="lighting" id="lighting" style="display:none;">  
+                  <option class="dropdown-item" value="sun">Sun</option>  
+                  <option class="dropdown-item" value="shade">Shade</option>  
+                  <option class="dropdown-item" value="bright">Bright</option>  
+              </select>  
             </div> 
+            <!-- Watering -->
             <div class="dropdown">  
-              <button type="button" class="dropbtn" data-toggle="dropdown">  
+              <button type="button" class="dropbtn" data-toggle="dropdown" id="wateringButton">  
+                <i class="fas fa-tint fa-lg"></i>
+              </button>  
+              <select for="watering" class="dropdown-menu" name="watering" id="watering" style="display:none;">  
+                <option class="dropdown-item" value="little">Little</option>   
+                <option class="dropdown-item" value="some">Some</option>   
+                <option class="dropdown-item" value="often">Often</option>   
+      
+              </select>  
+            </div> 
+            <!-- Temperature -->
+            <div class="dropdown">  
+              <button type="button" class="dropbtn" data-toggle="dropdown" id="tempButton">  
                 <i class="fas fa-thermometer-half fa-lg"></i>
               </button>  
-              <div class="dropdown-menu">  
-                  <a class="dropdown-item" href="#"> 1 </a>  
-                  <a class="dropdown-item" href="#"> 2 </a>  
-                  <a class="dropdown-item" href="#"> 3 </a>  
-                  <a class="dropdown-item" href="#"> 4 </a>  
-              </div>  
+              <select for="temperature" class="dropdown-menu" name="temperature" id="temperature" style="display:none;">
+                  <option class="dropdown-item" value="cold"> Cold </option>  
+                  <option class="dropdown-item" value="warm"> Warm </option>  
+                  <option class="dropdown-item" value="hot"> Hot </option>  
+              </select>  
+            </div> 
+            <!-- size -->
+            <div class="dropdown">  
+              <button type="button" class="dropbtn" data-toggle="dropdown" id="sizeButton">  
+                <i class="fas fa-ruler fa-lg"></i>
+              </button>  
+                <select for="size" class="dropdown-menu" name="size" id="size" style="display:none;">
+                    <option class="dropdown-item" href="#">Small</option>  
+                    <option class="dropdown-item" href="#">Medium</option>  
+                    <option class="dropdown-item" href="#">Large</option>  
+                </select>  
+
             </div> 
 
+            <!-- Trade -->
             <div class="container tradebtns">
               <div class="row">
                 <div class="col text-center">
-                  <label for="Sell">Sell $</label><br>
-                  <input type="checkbox" class="checkbox-round" name="Sell" id="Sell">
+                  <label for="sell">Sell $</label><br>
+                  <input type="checkbox" class="checkbox-round" name="trade" id="sell" value="sell">                
                 </div>
                 <div class="col text-center">
-                  <label for="Trade">Trade</label><br>
-                  <input type="checkbox" class="checkbox-round" name="Trade" id="Trade">
+                  <label for="trade">Trade</label><br>
+                  <input type="checkbox" class="checkbox-round" name="trade" id="trade" value="trade">
                 </div>
 
                 <div class="col text-center">
-                  <label for="Both">Both</label><br>
-                  <input type="checkbox" class="checkbox-round" name="Both" id="Both">
+                  <label for="both">Both</label><br>
+                  <input type="checkbox" class="checkbox-round" name="trade" id="both" value="both">
                 </div>
               </div>
             </div>
         </div>
-          <div>
-            <button class="btn submit-btn col-2 mt-5 mx-5 primary-btn" type="submit" id="submit-btn" value="POST">Edit</button>
-            <a class="cancelButton mt-5 mx-5" onclick="goBack()">Cancel</a>
-          </div>
+        <div>
+          <button class="btn submit-btn col-2" type="submit" id="submit-btn" value="POST">Post</button>
+        </div>
       </form>
-    </div>
+      </div>
 
 
+      
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="../script.js"></script>
-</body>
+  </body>
 
 </html>
