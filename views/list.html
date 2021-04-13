@@ -13,42 +13,35 @@
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"/>
       <!-- own style -->
       <link rel="stylesheet" href="../style.css">
-      <title>List a Plant</title>
-  </head>
-  <body>
+      <title>Dashboard</title>
+</head>
+<body>
 
-    <!-- NAV -->
-    <div class="pos-f-t">
-      <div class="collapse" id="navbarToggleExternalContent">
-        <div class="p-4">
-          <ul class="navbar-nav me-auto mb-1">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="account">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="logout">Logout</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <nav class="navbar navbar-dark">
-        <a class="navbar-brand mr-2" href="/"><img class="logoNav" src="evergreen-logo.png" alt="vergreen logo image"></a>
-        <div class="text">
-          {% if user %}
-          <p>Hello {{user.username |e}}!</p>
-          {% endif %}
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars ml-2"></i>
-        </button>
-      </nav>
+  <!-- NAV -->
+  <div class="navbar bg-transparent box-shadow">
+    <div class="container d-flex justify-content-between">
+      <a href="dashboard" class="navbar-brand d-flex align-items-center">
+        <strong>Evergreen</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <a id="navIcon"><i class="col fas fa-bars"></i></a>
+      </button>
     </div>
+  </div>
+
+  <section id="navPanel">
+    <nav id="mainNav" class="navbar-primary">
+      <ul class="navbar-primary-menu">
+        <li>
+          <a href="/" id="home"><span class="nav-label">Home</span></a>
+          <a href="account"><span class="nav-label">Profile</span></a>
+          <a href="/about"><span class="nav-label">About</span></a>
+          <a href="list"><span class="nav-label">List a Plant</span></a>
+          <a href="/logout"><span class="nav-label">Logout</span></a>
+        </li>
+      </ul>
+    </nav>
+  </section> 
 
     <!-- MAKE A LIST -->
     <div class="container mt-5 second-background list-control">
@@ -79,17 +72,17 @@
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
             <h4 class="categoryHeading mb-3">Category</h4>
             <input type="radio" class="hidden" id="indoor" name="category" value="indoor">
-            <label class="category-btn" for="indoor">Indoor</label>
+            <label for="indoor">Indoor</label>
             <input type="radio" class="hidden" id="outdoor" name="category" value="outdoor">
-            <label class="category-btn" for="outdoor">Outdoor</label>
+            <label for="outdoor">Outdoor</label>
             <input type="radio" class="hidden" id="ferns" name="category" value="ferns">
-            <label class="category-btn" for="ferns">Ferns</label><br>
+            <label for="ferns">Ferns</label><br>
             <input type="radio" class="hidden" id="trees" name="category" value="trees">
-            <label class="category-btn" for="trees">Trees</label>
+            <label for="trees">Trees</label>
             <input type="radio" class="hidden" id="tropical" name="category" value="tropical">
-            <label class="category-btn" for="tropical">Tropical</label>
+            <label for="tropical">Tropical</label>
             <input type="radio" class="hidden" id="cacti" name="category" value="cacti">
-            <label class="category-btn" for="cacti">Cacti</label><br>
+            <label for="cacti">Cacti</label><br>
 
 
             <!-- Care -->
@@ -132,15 +125,33 @@
             <div class="dropdown">  
               <button type="button" class="dropbtn" data-toggle="dropdown" id="sizeButton">  
                 <i class="fas fa-ruler fa-lg"></i>
+                <select for="size" class="dropdown-menu" name="size" id="size">
+                    <option class="dropdown-item" href="#">Small</option>  
+                    <option class="dropdown-item" href="#">Medium</option>  
+                    <option class="dropdown-item" href="#">Large</option>  
+                </select>  
               </button>  
-              <select for="size" class="dropdown-menu" name="size" id="size" style="display:none;">
-                  <option class="dropdown-item" href="#">Small</option>  
-                  <option class="dropdown-item" href="#">Medium</option>  
-                  <option class="dropdown-item" href="#">Large</option>  
-              </select>  
+
             </div> 
 
+            <!-- Trade -->
+            <div class="container tradebtns">
+              <div class="row">
+                <div class="col text-center">
+                  <label for="Sell">Sell $</label><br>
+                  <input type="checkbox" class="checkbox-round" name="Sell" id="Sell">
+                </div>
+                <div class="col text-center">
+                  <label for="Trade">Trade</label><br>
+                  <input type="checkbox" class="checkbox-round" name="Trade" id="Trade">
+                </div>
 
+                <div class="col text-center">
+                  <label for="Both">Both</label><br>
+                  <input type="checkbox" class="checkbox-round" name="Both" id="Both">
+                </div>
+              </div>
+            </div>
         </div>
         <div>
           <button class="btn submit-btn col-2" type="submit" id="submit-btn" value="POST">Post</button>
@@ -149,11 +160,10 @@
       </form>
 
 
-
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="../script.js"></script>
-  </body>
+</body>
 
 </html>
