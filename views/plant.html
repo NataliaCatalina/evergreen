@@ -13,57 +13,72 @@
       <!-- own style -->
       <link rel="stylesheet" href="../style.css">
       <title>Account</title>
-  </head>
-  <body>
+    </head>
+    <body>
     
-     <!-- NAV -->
-     <div class="navbar bg-transparent box-shadow">
-      <div class="container d-flex justify-content-between">
-        <a href="dashboard" class="navbar-brand d-flex align-items-center">
-          <strong>Evergreen</strong>
-        </a>
+      <!-- NAV -->
+      <div class="pos-f-t">
+      <div class="collapse" id="navbarToggleExternalContent">
+        <div class="p-4">
+          <ul class="navbar-nav me-auto mb-1">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="account">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="list">List a Plant</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <nav class="navbar navbar-dark">
+        <a class="navbar-brand mr-2" href="/"><img class="logoNav" src="/evergreen-logo.png" alt="vergreen logo image"></a>
         <div class="text">
           {% if user %}
           <p>Hello {{user.username |e}}!</p>
           {% endif %}
         </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-          <a id="navIcon"><i class="col fas fa-bars"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars ml-2"></i>
         </button>
-      </div>
-    </div>
-
-    <section id="navPanel">
-      <nav id="mainNav" class="navbar-primary">
-        <ul class="navbar-primary-menu">
-          <li>
-            <a href="/"><span class="nav-label">Home</span></a>
-            <a href="account"><span class="nav-label">Profile</span></a>
-            <a href="/about"><span class="nav-label">About</span></a>
-            <a href="list"><span class="nav-label">List a Plant</span></a>
-            <a href="/logout"><span class="nav-label">Logout</span></a>
-          </li>
-        </ul>
       </nav>
-    </section> 
-
+    </div>
 
     <!-- PLANT PROFILE -->
     <div class="container mt-5">
 
       <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 border border-primary">
-          <img class="card-img-right img-fluid flex-auto d-md-block image-card" src="{{post.image_url |e}}" alt="art image">
+          <img class="card-img-right img-fluid flex-auto d-md-block image-card rounded-lg" src="{{post.image_url |e}}" alt="art image">
         </div>
 
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 border border-secondary">
           <h2 class="mb-3"><span class="post_title">{{post.plant_name |e}}</span></h2>
           <p>Location</p>
-          <p> <span>{{post.author |e}}</span> </p>
-          <p>$<span>{{post.price |e}}</span> </p>
+          <p>By <span>{{post.author |e}}</span> </p>
+          <h2>$<span>{{post.price |e}}</span></h2>
           <p><span>{{post.description |e}}</span> </p>
-          <span>{{post.category |e}}</span> <br> <!-- need style -->
-          <span>{{post.lighting |e}}</span> <br> <!-- need style -->
+          <span class="plant-category">{{post.category |e}}</span><br>
+          <button type="button" class="dropbtn">  
+            <i class="fas fa-cloud-sun fa-lg"></i>
+            <span >{{post.lighting |e}}</span>
+          </button>  
+          <button type="button" class="dropbtn">  
+            <i class="fas fa-tint fa-lg"></i>
+            <span >{{post.watering |e}}</span>
+          </button>  
+          <button type="button" class="dropbtn">  
+            <i class="fas fa-thermometer-half fa-lg"></i>
+            <span >{{post.temperature |e}}</span>
+          </button>  
           <div class="d-inline-block mb-2 text-primary">
             <a href="/delete/{{post._id}}" class="btn btn-outline-dark">Delete</a>
             <a href="/edit/{{post._id}}" class="btn btn-outline-dark">Edit</a>

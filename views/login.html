@@ -35,6 +35,11 @@
       </div>
       <nav class="navbar navbar-dark">
         <a class="navbar-brand mr-2" href="/"><img class="logoNav" src="evergreen-logo.png" alt="vergreen logo image"></a>
+        <div class="text">
+          {% if user %}
+          <p>Hello {{user.username |e}}!</p>
+          {% endif %}
+        </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars ml-2"></i>
         </button>
