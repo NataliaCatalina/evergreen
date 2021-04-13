@@ -132,32 +132,15 @@
             <div class="dropdown">  
               <button type="button" class="dropbtn" data-toggle="dropdown" id="sizeButton">  
                 <i class="fas fa-ruler fa-lg"></i>
-                <select for="size" class="dropdown-menu" name="size" id="size">
-                    <option class="dropdown-item" href="#">Small</option>  
-                    <option class="dropdown-item" href="#">Medium</option>  
-                    <option class="dropdown-item" href="#">Large</option>  
-                </select>  
               </button>  
-
+              <select for="size" class="dropdown-menu" name="size" id="size" style="display:none;">
+                  <option class="dropdown-item" href="#">Small</option>  
+                  <option class="dropdown-item" href="#">Medium</option>  
+                  <option class="dropdown-item" href="#">Large</option>  
+              </select>  
             </div> 
 
-            <!-- Trade -->
-            <div class="container tradebtns">
-              <div class="row">
-                <div class="col text-center">
-                  <input type="radio" name="trade" value="sell">
-                  <label for="sell">Sell $</label>
-                </div>
-                <div class="col text-center">
-                  <input type="radio" name="trade" value="trade">
-                  <label for="trade">Trade</label>
-                </div>
-                <div class="col text-center">
-                  <input type="radio" name="trade" value="both">
-                  <label class="none" for="both">Both</label>
-                </div>
-              </div>
-            </div>
+
         </div>
         <div>
           <button class="btn submit-btn col-2" type="submit" id="submit-btn" value="POST">Post</button>
