@@ -154,6 +154,31 @@ nav{
     position: relative;
     display: inline-block;
   }
+
+  .custom-select {
+    background: #F35B54;
+    border-width: 0 0 1px;
+    border-radius: 15px;
+    color: white;
+    font-size: 16px;
+    width: 80px;
+    height: 50px;
+  }
+
+  select {
+    font-family: 'FontAwesome', 'Second Font name'
+    }
+
+    .newIdea {
+      background: #F35B54;
+    border-width: 0 0 1px;
+    border-radius: 15px;
+    color: white;
+    font-size: 16px;
+    width: 80px;
+    height: 50px;
+    }
+
   
   .checkbox-round:checked {
     background-color: #DEFFEF;

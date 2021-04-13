@@ -10,6 +10,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
       <!-- Fontawesome icons -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"/>
       <!-- own style -->
       <link rel="stylesheet" href="../style.css">
       <title>Dashboard</title>
@@ -88,10 +89,10 @@
             <h4 class="careHeading">Care</h4>
             <!-- Lighting -->
             <div class="dropdown">  
-              <button type="button" class="dropbtn" data-toggle="dropdown">  
+              <button type="button" class="dropbtn" data-toggle="dropdown" id="lightingButton">  
                 <i class="fas fa-cloud-sun fa-lg"></i>
               </button>  
-              <select for="lighting" class="dropdown-menu" name="lighting" id="lighting">  
+              <select for="lighting" class="dropdown-menu" name="lighting" id="lighting" style="display:none;">  
                   <option class="dropdown-item" value="sun">Sun</option>  
                   <option class="dropdown-item" value="shade">Shade</option>  
                   <option class="dropdown-item" value="bright">Bright</option>  
@@ -99,10 +100,10 @@
             </div> 
             <!-- Watering -->
             <div class="dropdown">  
-              <button type="button" class="dropbtn" data-toggle="dropdown">  
+              <button type="button" class="dropbtn" data-toggle="dropdown" id="wateringButton">  
                 <i class="fas fa-tint fa-lg"></i>
               </button>  
-              <select for="watering" class="dropdown-menu" name="watering" id="watering">  
+              <select for="watering" class="dropdown-menu" name="watering" id="watering" style="display:none;">  
                 <option class="dropdown-item" value="little">Little</option>   
                 <option class="dropdown-item" value="some">Some</option>   
                 <option class="dropdown-item" value="often">Often</option>   
@@ -111,10 +112,10 @@
             </div> 
             <!-- Temperature -->
             <div class="dropdown">  
-              <button type="button" class="dropbtn" data-toggle="dropdown">  
+              <button type="button" class="dropbtn" data-toggle="dropdown" id="tempButton">  
                 <i class="fas fa-thermometer-half fa-lg"></i>
               </button>  
-              <select for="temperature" class="dropdown-menu" name="temperature" id="temperature">
+              <select for="temperature" class="dropdown-menu" name="temperature" id="temperature" style="display:none;">
                   <option class="dropdown-item" value="cold"> Cold </option>  
                   <option class="dropdown-item" value="warm"> Warm </option>  
                   <option class="dropdown-item" value="hot"> Hot </option>  
@@ -122,7 +123,7 @@
             </div> 
             <!-- size -->
             <div class="dropdown">  
-              <button type="button" class="dropbtn" data-toggle="dropdown">  
+              <button type="button" class="dropbtn" data-toggle="dropdown" id="sizeButton">  
                 <i class="fas fa-ruler fa-lg"></i>
                 <select for="size" class="dropdown-menu" name="size" id="size">
                     <option class="dropdown-item" href="#">Small</option>  
@@ -130,6 +131,7 @@
                     <option class="dropdown-item" href="#">Large</option>  
                 </select>  
               </button>  
+
             </div> 
 
             <!-- Trade -->
