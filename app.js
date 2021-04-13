@@ -131,9 +131,7 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
         res.render("about")
     })
 
-    app.get("/list", (req,res) =>{
-        res.render("list")
-    })
+ 
     app.get("/edit", (req,res) =>{
         res.render("edit")
     })
@@ -203,6 +201,12 @@ app.post('/list', (req, res) => {
         if (err) throw err;
     });
 });
+
+app.get("/list", (req,res) =>{
+    res.render('list', {
+        user: req.user
+    });
+})
 
 ////////////////////////
 // DISPLAY PLANT LIST //

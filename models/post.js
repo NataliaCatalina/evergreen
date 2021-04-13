@@ -39,11 +39,11 @@ const postSchema = new Schema({
     },
     size: {
         type: String,
+    },
+    trade: {
+        type: String,
     }
-
-
-
-    
+   
 
     },{
         timestamps: true
