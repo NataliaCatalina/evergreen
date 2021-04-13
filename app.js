@@ -190,7 +190,11 @@ app.post('/list', (req, res) => {
         image_url:req.body.image_url,
         category:req.body.category,
         author:req.user.username,
-        lighting:req.body.lighting
+        lighting:req.body.lighting,
+        watering:req.body.watering,
+        temperature:req.body.temperature,
+        size:req.body.size,
+        trade:req.body.trade
     })
     .save()
     .then(result => {
