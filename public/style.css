@@ -109,7 +109,7 @@ nav{
 
   /*CATEGORY*/
   .hidden {position:absolute;visibility:hidden;opacity:0;}
-    input[type=radio] + label {
+    input[type=radio] + .category-btn {
     color: black;
     font-style: italic;
     border: 2px solid #77D0D6;
@@ -118,7 +118,7 @@ nav{
     border-radius: 15px;
     background-color: #DEFFEF;
   }  
-  input[type=radio]:checked + label {
+  input[type=radio]:checked + .category-btn {
     color: black;
     font-style: normal;
     border: 2px solid #DEFFEF;
@@ -246,6 +246,8 @@ nav{
   .tradebtns {
     margin-top: 50px;
   }
+
+  
 
   @media only screen and (max-width: 400px) {
     .submit-btn {
