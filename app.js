@@ -37,9 +37,9 @@ app.set('views','views');
 ///////////////////////
 
 //Natalia-database
-const MONGODB_URL = 'mongodb+srv://test:Password@cluster0.7bulh.mongodb.net/plantsDatabase?retryWrites=true&w=majority';
+// const MONGODB_URL = 'mongodb+srv://test:Password@cluster0.7bulh.mongodb.net/plantsDatabase?retryWrites=true&w=majority';
 //Alex-database
-// const MONGODB_URL = 'mongodb+srv://test:test123@cluster0.8tyse.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const MONGODB_URL = 'mongodb+srv://test:test123@cluster0.8tyse.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.connect(MONGODB_URL, { useUnifiedTopology: true });
 
 
