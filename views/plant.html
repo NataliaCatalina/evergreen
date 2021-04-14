@@ -61,7 +61,11 @@
         </div>
 
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 border border-info">
-          <h2 class="mb-3"><span class="post_title">{{post.plant_name |e}}</span></h2>
+          <h2 class="mb-3"><span class="post_title">{{post.plant_name |e}}</span>
+            {% if user %}
+            <a href="/delete/{{post._id}}" class="deleteButton"><i class="far fa-trash-alt"></i></a>
+            <a href="/edit/{{post._id}}" class="editButton"><i class="far fa-edit"></i></a>
+        {% endif %}</h2>
           <p>By <span>{{post.author |e}}</span> </p>
           {% if post.trade == "both" %} 
           <span><i class="sellIcon fa-lg fas fa-dollar-sign"></i></span><span><i class="sellIcon fa-lg fas fa-exchange-alt"></i></span>
@@ -114,13 +118,8 @@
           </div>
         </div>
 
-
-        <button href="/success" class="btn submit-btn" type="button" id="submit-btn">Request Plant</button>
-     
-      
-        <div class="mb-2 text-primary">
-          <a href="/delete/{{post._id}}" class="btn btn-outline-dark">Delete</a>
-          <a href="/edit/{{post._id}}" class="btn btn-outline-dark">Edit</a>
+        <div>
+          <a href="success" class="btn request-btn" type="button" id="request-btn">Request Plant</a>
         </div>
         </div>
 

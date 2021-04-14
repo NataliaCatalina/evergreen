@@ -17,6 +17,8 @@ function goBack() {
     window.history.back();
   }
 
+  // all the JS for the care dropdowns
+
   $("#wateringButton").on("click",function(){
     var se=$("#watering");
     se.toggle();
@@ -77,4 +79,13 @@ function goBack() {
   $("#sizeButton").on("click",function(){
     var se=$("#watering, #lighting, #temperature");
     se.hide();
+  });
+
+  $(window).click(function() {
+    var se=$("#watering, #lighting, #temperature, #size");
+    se.hide();
+  });
+  
+  $('#menucontainer').click(function(event){
+    event.stopPropagation();
   });

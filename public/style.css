@@ -106,12 +106,12 @@ nav{
   .hidden {position:absolute;visibility:hidden;opacity:0;}
     input[type=radio] + label {
     color: black;
-    font-style: italic;
+    font-style: normal;
     border: 2px solid #77D0D6;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 15px;
-    background-color: #DEFFEF;
+    background-color: #77D0D6;
   }  
   input[type=radio]:checked + label {
     color: black;
@@ -120,7 +120,7 @@ nav{
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 15px;
-    background-color: #77D0D6;
+    background-color: #DEFFEF;
     }
 
   .checkbox-round {
@@ -262,7 +262,6 @@ nav{
       } 
   }
 
-
 /* Home page - Alex */
 
 .loginButtonHome {
@@ -378,16 +377,16 @@ nav{
   }
 }
 
-/* Plant Profile Page */
+/* Plant Profile Page Nat + Alex */
 
 .plant-category {
   color: black;
-  font-style: italic;
+  font-style: normal;
   border: 2px solid #77D0D6;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 15px;
-  background-color: #DEFFEF;
+  background-color: #77D0D6;
 }  
 
 .careIconsDiv {
@@ -419,9 +418,30 @@ nav{
   margin-right: 5px;
 }
 
-
 .description {
   margin-top: 50px;
+}
+
+.request-btn {
+  text-align: center; 
+  margin-top: 3em;
+  margin-left: 3em;
+  margin-right: 3em;
+  background:#236F99 ;
+  border-radius: 20px;
+  color:#DEEDED;
+  float: left;
+}
+
+.deleteButton {
+  color: black;
+  float: right;
+}
+
+.editButton {
+  color: black;
+  float: right;
+  margin-right: 10px;
 }
 
 /* COMMENT */
