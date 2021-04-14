@@ -27,9 +27,6 @@
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="account">Profile</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="about">About</a>
               </li>
               <li class="nav-item">
@@ -45,7 +42,7 @@
           <a class="navbar-brand mr-2" href="/"><img class="logoNav" src="evergreen-logo.png" alt="vergreen logo image"></a>
           <div class="text">
             {% if user %}
-            <p>Hello {{user.username |e}}!</p>
+            <p>Good idea {{user.username |e}}!</p>
             {% endif %}
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
