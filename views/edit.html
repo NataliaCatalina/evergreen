@@ -62,19 +62,19 @@
           <h1 class="mt-5 mb-5 font-color" >List an item</h1>
           <div class="form-label-group">
             <label class="font-color" for="plant_name">Plant Name</label>
-            <input type="text" id="plant_name" class="form-control mb-2" name="plant_name"  required autofocus>
+            <input type="text" id="plant_name" class="form-control mb-2" name="plant_name"  value="{{post.plant_name |e}}">
           </div>
           <div class="form-label-group">
             <label class="font-color" for="description">Description</label>
-            <input type="text" id="description" class="form-control mb-2" name="description" required>
+            <input type="text" id="description" class="form-control mb-2" name="description" value="{{post.description |e}}">
           </div>
           <div class="form-label-group">
             <label class="font-color" for="price">Price</label>
-            <input type="text" id="price" class="form-control mb-2" name="price" required>
+            <input type="text" id="price" class="form-control mb-2" name="price" value="{{post.price |e}}">
           </div>
           <div class="form-label-group">
             <label class="font-color" for="image_url">Image URL</label>
-            <input type="text" id="image_url" class="form-control mb-2" name="image_url" required>
+            <input type="text" id="image_url" class="form-control mb-2" name="image_url" value="{{post.image_url |e}}">
           </div>
         </div>
 
@@ -83,17 +83,41 @@
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
             <a class="cancelButton" onclick="goBack()"><i class="fas fa-2x fa-times"></i></a>
             <h4 class="categoryHeading mb-3">Category</h4>
+            {% if post.category == "indoor" %}
+            <input type="radio" class="hidden" id="indoor" name="category" value="indoor" checked>
+            {% else %}
             <input type="radio" class="hidden" id="indoor" name="category" value="indoor">
+            {% endif %}
             <label for="indoor">Indoor</label>
+            {% if post.category == "indoor" %}
+            <input type="radio" class="hidden" id="outdoor" name="category" value="outdoor" checked>
+            {% else %}
             <input type="radio" class="hidden" id="outdoor" name="category" value="outdoor">
+            {% endif %}
             <label for="outdoor">Outdoor</label>
+            {% if post.category == "ferns" %}
+            <input type="radio" class="hidden" id="ferns" name="category" value="ferns" checked>
+            {% else %}
             <input type="radio" class="hidden" id="ferns" name="category" value="ferns">
+            {% endif %}
             <label for="ferns">Ferns</label><br>
+            {% if post.category == "trees" %}
+            <input type="radio" class="hidden" id="trees" name="category" value="trees" checked>
+            {% else %}
             <input type="radio" class="hidden" id="trees" name="category" value="trees">
+            {% endif %}
             <label for="trees">Trees</label>
+            {% if post.category == "tropical" %}
+            <input type="radio" class="hidden" id="tropical" name="category" value="tropical" checked>
+            {% else %}
             <input type="radio" class="hidden" id="tropical" name="category" value="tropical">
+            {% endif %}
             <label for="tropical">Tropical</label>
+            {% if post.category == "cacti" %}
+            <input type="radio" class="hidden" id="cacti" name="category" value="cacti" checked>
+            {% else %}
             <input type="radio" class="hidden" id="cacti" name="category" value="cacti">
+            {% endif %}
             <label for="cacti">Cacti</label><br>
 
 
@@ -151,16 +175,31 @@
               <div class="row">
                 <div class="col text-center">
                   <label for="sell">Sell $</label><br>
-                  <input type="checkbox" class="checkbox-round" name="trade" id="sell" value="sell">                
+                  <!-- <input type="checkbox" class="checkbox-round" name="trade" id="sell" value="sell"> -->
+                  {% if post.trade == "sell" %}
+                  <input type="checkbox" class="checkbox-round" name="trade" id="sell" value="sell" checked>     
+                  {% else %}
+                  <input type="checkbox" class="checkbox-round" name="trade" id="sell" value="sell">           
+                  {% endif %}
                 </div>
                 <div class="col text-center">
                   <label for="trade">Trade</label><br>
+                  <!-- <input type="checkbox" class="checkbox-round" name="trade" id="trade" value="trade"> -->
+                  {% if post.trade == "trade" %}
+                  <input type="checkbox" class="checkbox-round" name="trade" id="trade" value="trade" checked>
+                  {% else %}
                   <input type="checkbox" class="checkbox-round" name="trade" id="trade" value="trade">
+                  {% endif %}
                 </div>
 
                 <div class="col text-center">
                   <label for="both">Both</label><br>
+                  <!-- <input type="checkbox" class="checkbox-round" name="trade" id="both" value="both"> -->
+                  {% if post.trade == "both" %}
+                  <input type="checkbox" class="checkbox-round" name="trade" id="both" value="both" checked>
+                  {% else %}
                   <input type="checkbox" class="checkbox-round" name="trade" id="both" value="both">
+                  {% endif %}
                 </div>
               </div>
             </div>

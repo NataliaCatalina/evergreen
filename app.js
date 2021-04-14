@@ -206,7 +206,7 @@ app.post('/list', (req, res) => {
     });
 });
 
-app.get("/list", (req,res) =>{
+app.get("/list", isLoggedIn, (req,res) =>{
     res.render('list', {
         user: req.user
     });
