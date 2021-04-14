@@ -128,7 +128,9 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
     })
 
     app.get("/about", (req,res) =>{
-        res.render("about")
+        res.render("about", {
+            user: req.user
+        })
     })
  
     app.get("/edit", (req,res) =>{
@@ -136,7 +138,9 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
     })
 
     app.get("/success", (req,res) =>{
-        res.render("success")
+        res.render("success", {
+            user: req.user
+        })
     })
 
     
