@@ -65,16 +65,16 @@
           <p>Location</p>
           <p>By <span>{{post.author |e}}</span> </p>
           {% if post.trade == "both" %} 
-          <span><i class="fas fa-dollar-sign"></i><i class="fas fa-exchange-alt"></i></span>
+          <span><i class="sellIcon fa-lg fas fa-dollar-sign"></i></span><span><i class="sellIcon fa-lg fas fa-exchange-alt"></i></span>
           {% endif %}
           {% if post.trade == "trade" %} 
-          <span><i class="fas fa-exchange-alt"></i></span>
+          <span><i class="sellIcon fa-lg fas fa-exchange-alt"></i></span>
           {% endif %}
           {% if post.trade == "sell" %} 
-          <span><i class="fas fa-dollar-sign"></i></i></span>
+          <span><i class="sellIcon fa-lg fas fa-dollar-sign"></i></i></span>
           {% endif %}
-          <h2>$<span>{{post.price |e}}</span></h2>
-          <p><span>{{post.description |e}}</span> </p>
+          <h2 class="d-inline-block align-middle">$<span>{{post.price |e}}</span></h2>
+          <p><div class="description">{{post.description |e}}</div> </p>
           <span class="plant-category">{{post.category |e}}</span><br>
           <div class="careIconsDiv">  
           <div class="careIcons text-center">  
