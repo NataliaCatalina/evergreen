@@ -9,12 +9,14 @@ const bodyParser = require ('body-parser');
 const twig  = require('twig');
 const app = express();
 
+
 ///////////////////////
 // IMPORT OUR MODEL //
 /////////////////////
 
 const User = require("./models/user");
 const Post = require('./models/post'); 
+
 
 // SETTING UP THE STRATEGY TO PRIVIDE SECURITY
 const LocalStrategy = require("passport-local");
@@ -115,8 +117,6 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
         }); 
     });
 
-
-
     app.get("/signup", (req,res) =>{
         res.render("signup")
     })
@@ -130,14 +130,11 @@ mongoose.connect(MONGODB_URL, {useNewUrlParser : true})
     app.get("/about", (req,res) =>{
         res.render("about")
     })
-
  
     app.get("/edit", (req,res) =>{
         res.render("edit")
     })
-    app.get("/account", (req,res) =>{
-        res.render("account")
-    })
+
     app.get("/success", (req,res) =>{
         res.render("success")
     })
@@ -174,8 +171,6 @@ app.post("/login", passport.authenticate("local",{
     failureRedirect:"/login"
     })
 );
-
-
 
 /////////////////////
 // ADD A PLANT LIST//
@@ -395,3 +390,29 @@ function isLoggedIn(req, res, next) {
                 return next();
             res.redirect('/');     
 };
+
+//////////////
+// COMMENT //
+////////////
+
+app.post('/comment/:id', (req, res) => {
+    Post.findById(req.params.id)
+    .then(result => {
+        if(result){
+            const new_comment = " " + req.body.comment;
+            Post.findByIdAndUpdate(req.params.id, { $push: { comment:new_comment } }, { returnOriginal: false}).exec();
+            console.log(Post.comment);
+        }
+        else {
+            console.log(err);
+            res.redirect('/');
+            
+        }
+    })
+    .then(update => {
+        res.redirect('/dashboard');
+    })
+    .catch(err => {
+        res.redirect('/dashboard');
+    });
+});

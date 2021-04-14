@@ -53,16 +53,15 @@
     </div>
 
     <!-- PLANT PROFILE -->
-    <div class="container mt-5">
+    <div class="container-fluid">
 
-      <div class="row">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 border border-primary">
-          <img class="card-img-right img-fluid flex-auto d-md-block image-card rounded-lg" src="{{post.image_url |e}}" alt="art image">
+      <div class="row w-75 mx-auto">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <img class="card-img-right img-fluid flex-auto d-md-block image-card" src="{{post.image_url |e}}" alt="art image">
         </div>
 
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 border border-secondary">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 border border-info">
           <h2 class="mb-3"><span class="post_title">{{post.plant_name |e}}</span></h2>
-          <p>Location</p>
           <p>By <span>{{post.author |e}}</span> </p>
           {% if post.trade == "both" %} 
           <span><i class="sellIcon fa-lg fas fa-dollar-sign"></i></span><span><i class="sellIcon fa-lg fas fa-exchange-alt"></i></span>
@@ -74,7 +73,7 @@
           <span><i class="sellIcon fa-lg fas fa-dollar-sign"></i></i></span>
           {% endif %}
           <h2 class="d-inline-block align-middle">$<span>{{post.price |e}}</span></h2>
-          <p><div class="description">{{post.description |e}}</div> </p>
+          <p class="description">{{post.description |e}}</p>
           <span class="plant-category">{{post.category |e}}</span><br>
           <div class="careIconsDiv">  
           <div class="careIcons text-center">  
@@ -94,19 +93,35 @@
             <span >{{post.temperature |e}}</span>
           </div>  
         </div>  
-        <div class="careIconsDiv">  
+        <div class="careIconsDiv mb-5">  
           <div class="careIcons text-center">  
             <i class="fas fa-ruler fa-lg"></i><br>
             <span >{{post.size |e}}</span>
           </div>  
-          <div>
-            <button href="/success" class="btn submit-btn" type="button" id="submit-btn">Request Plant</button>
-          </div>
         </div>  
-          <div class="mb-2 text-primary">
-            <a href="/delete/{{post._id}}" class="btn btn-outline-dark">Delete</a>
-            <a href="/edit/{{post._id}}" class="btn btn-outline-dark">Edit</a>
+
+        <div class="row  border border-info mb-5">
+          <form action="/comment/{{post._id}}" method="post">
+              <textarea name="comment" placeholder="Comment" id="comment"></textarea>
+              <button type="submit" class="btn submit-btn">Submit</button>
+          </form>
+          <div>
+            <p class="text-muted">{{post.comment[0] |e}}</p>
+            <p class="text-muted">{{post.comment[1] |e}}</p>
+            <p class="text-muted">{{post.comment[2] |e}}</p>
+            <p class="text-muted">{{post.comment[3] |e}}</p>
+            <p class="text-muted">{{post.comment[4] |e}}</p>
           </div>
+        </div>
+
+
+        <button href="/success" class="btn submit-btn" type="button" id="submit-btn">Request Plant</button>
+     
+      
+        <div class="mb-2 text-primary">
+          <a href="/delete/{{post._id}}" class="btn btn-outline-dark">Delete</a>
+          <a href="/edit/{{post._id}}" class="btn btn-outline-dark">Edit</a>
+        </div>
         </div>
 
       </div>

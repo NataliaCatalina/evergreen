@@ -70,11 +70,6 @@ nav{
     }
   }
 
-  /* .form-input{
-    outline: 0;
-    border-width: 0 0 1px;
-    border-color: black;
-  } */
   #username, #password, #phone, #email {
     outline: 0;
     border-width: 0 0 1px;
@@ -427,4 +422,18 @@ nav{
 
 .description {
   margin-top: 50px;
+}
+
+/* COMMENT */
+#comment {
+  width: 50%;
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: black;
+  fill: none;
+  background: transparent;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }

@@ -27,21 +27,31 @@ const postSchema = new Schema({
     },
     category: {
         type: String,
+        require:true
     },
     lighting: {
         type: String, 
+        require:true
     },
     watering: {
         type: String,
+        require:true
     },
     temperature: {
         type: String, 
+        require:true
     },
     size: {
         type: String,
+        require:true
     },
     trade: {
         type: String,
+        require:true
+    },
+    comment: {
+       type: Array,
+       require:true
     }
    
 
