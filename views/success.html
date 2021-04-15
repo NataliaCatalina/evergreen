@@ -37,7 +37,7 @@
         </div>
       </div>
       <nav class="navbar navbar-dark">
-        <a class="navbar-brand mr-2" href="/public"><img class="logoNav" src="/evergreen-logo.png" alt="evergreen logo image"></a>
+        <a class="navbar-brand mr-2" href="/dashboard"><img class="logoNav" src="/evergreen-logo.png" alt="evergreen logo image"></a>
         <div class="text">
           {% if user %}
           <p>Thanks {{user.username |e}}!</p>
@@ -57,12 +57,16 @@
             </div>
             <div class="col">
                 <h1>Success!</h1>
-                <p>Your request is been processed, Claude  will constact you soon. Thanks for using Evergreen</p>
+                <p>Your request is been processed, the owner will contact you soon. Thanks for using Evergreen</p>
                 <a class="backToButton btn btn-primary mt-5" onclick="goBack()">Back to listing</a>
             </div>
         </div>
-      
     </div>
+
+    <!-- FOOTER -->
+    <footer class="container-fluid text-light text-center mt-5 p-3" >
+      <p class="text-muted"> ©2021 Yoobee - Application Development Assignment<br>Developed by Alexander Little, Hayley Clarke and Natalia Ramirez</p>
+    </footer>
 
 
 

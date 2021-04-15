@@ -172,7 +172,7 @@ app.post("/login", passport.authenticate("local",{
 );
 
 /////////////////////////
-// authenticate login //
+// AUTHENTICATE LOGIN //
 ///////////////////////
 
 function isLoggedIn(req, res, next) {
