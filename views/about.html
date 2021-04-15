@@ -12,7 +12,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
       <!-- own style -->
       <link rel="stylesheet" href="../style.css">
-      <title>Dashboard</title>
+      <title>About</title>
   </head>
   <body>
 
@@ -37,7 +37,7 @@
         </div>
       </div>
       <nav class="navbar navbar-dark">
-        <a class="navbar-brand mr-2" href="/"><img class="logoNav" src="evergreen-logo.png" alt="vergreen logo image"></a>
+        <a class="navbar-brand mr-2" href="/public"><img class="logoNav" src="evergreen-logo.png" alt="evergreen logo image"></a>
         <div class="text">
           {% if user %}
           <p>Hello {{user.username |e}}!</p>
@@ -58,10 +58,16 @@
                 <p class="">Evergreen is a new web based market place dedicated to plant people.<br><br>We are here to help you sell trade and adopt plants all over New Zealand.<br> Our goal is to help you create your own garden oasis
                   and share our passion for plants.<br>We offer basic plant care guides for the first time plant parents and trading so everyone has the opportunity to be a plant fanatic.<br><br>Join our marketplace today &
                   Adopt trade and sell to your hearts content.<br><br> Thank you  & Happy Growing ! <br><br> The Evergreen team</p>
-                
-                <div class="d-flex justify-content-left">
-                  <a href="signup"><button class="primary-btn btn submit-btn col-6 ">Sign up</button></a>
-                </div>
+                  {% if user %}
+                  <style>
+                    .none {
+                    display: none;
+                    }
+                    </style>
+                  {% endif %}
+                    <div class="d-flex justify-content-left">
+                      <a href="signup"><button class="primary-btn btn submit-btn col-6 none">Sign up</button></a>
+                    </div>
             </div>
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                 <img class="img-fluid" src="images/evergreenlogo.png" alt="tree">
@@ -70,6 +76,10 @@
       </div>
     </div>
 
+    <!-- FOOTER -->
+    <footer class="container-fluid text-light text-center mt-5 p-3" >
+      <p class="text-muted"> ©2021 Yoobee - Application Development Assignment<br>Developed by Alexander Little, Hayley Clarke and Natalia Ramirez</p>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
