@@ -8,6 +8,8 @@ const passport =  require("passport");
 const bodyParser = require ('body-parser');
 const twig  = require('twig');
 const app = express();
+const LocalStrategy = require("passport-local");
+const passportLocalMongoose = require("passport-local-mongoose");
 
 
 ///////////////////////
@@ -16,13 +18,6 @@ const app = express();
 
 const User = require("./models/user");
 const Post = require('./models/post'); 
-
-
-// SETTING UP THE STRATEGY TO PRIVIDE SECURITY
-const LocalStrategy = require("passport-local");
-
-//simplifies the integration between Mongoose and Passport for local authentication
-const passportLocalMongoose = require("passport-local-mongoose");
 
 //////////////////
 // VIEW ENGINE //
@@ -36,12 +31,8 @@ app.set('views','views');
 // MONGO DATABASE URL //
 ///////////////////////
 
-//Natalia-database
-// const MONGODB_URL = 'mongodb+srv://test:Password@cluster0.7bulh.mongodb.net/plantsDatabase?retryWrites=true&w=majority';
-//Alex-database
-const MONGODB_URL = 'mongodb+srv://test:test123@cluster0.8tyse.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const MONGODB_URL = 'mongodb+srv://test:Password@cluster0.7bulh.mongodb.net/plantsDatabase?retryWrites=true&w=majority';
 mongoose.connect(MONGODB_URL, { useUnifiedTopology: true });
-
 
 ////////////////////////////////////////////////// 
 // PUBLIC ACCESIBLE TO OUR BACKEND APPLICATION //
@@ -50,20 +41,24 @@ mongoose.connect(MONGODB_URL, { useUnifiedTopology: true });
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/js'));
 
-// USE BODY PASRSER
-app.use(bodyParser.urlencoded({extended:false}));
+//////////////////////////////////
+// adding session and passport //
+////////////////////////////////
 
 app.use(require("express-session")({
-    secret:"any normal word", //decode or encode session, this is used to compute the hash.
-    resave: false,              //What this does is tell the session store that a particular session is still active, in the browser
-    saveUninitialized:false    //the session cookie will not be set on the browser unless the session is modified
+    secret:"any normal word", 
+    resave: false,             
+    saveUninitialized:false   
 }));
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser()); 
 passport.use(new LocalStrategy(User.authenticate()));
 
-// BOYPARSER TO RETURN INFORMATION TO OUR DATABASE
+//////////////////////////////////////////////////////
+// BOYPARSER TO RETURN INFORMATION TO OUR DATABASE //
+////////////////////////////////////////////////////
+
 app.use(bodyParser.urlencoded({ extended:true }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -176,6 +171,16 @@ app.post("/login", passport.authenticate("local",{
     })
 );
 
+/////////////////////////
+// authenticate login //
+///////////////////////
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) 
+                return next();
+            res.redirect('/');     
+}
+
 /////////////////////
 // ADD A PLANT LIST//
 ////////////////////
@@ -263,6 +268,7 @@ app.post('/edit/:id', (req, res) => {
     });
 });
 
+
 ////////////////////////
 // DISPLAY PLANT LIST //
 ///////////////////////
@@ -314,8 +320,6 @@ app.get('/delete/:id', (req, res) => {
 });
 
 
-
-
 //////////////////////////
 // GO TO PLANT PROFILE//
 ////////////////////////
@@ -339,46 +343,6 @@ app.get('/plant/:id', (req, res) => {
     });
 });
 
-// UPDATE POST
-app.get('/edit/:id', (req, res) => {
-    Post.findById(req.params.id)
-    .then(result => {
-        if(result){
-            res.render('edit',{
-                post:result
-            });
-        }
-        else{
-            res.redirect('/');
-        }
-    })
-    .catch(err => {
-        res.redirect('/');
-    });
-});
-
-//UPDATE POST
-app.post('/plant/:id', (req, res) => {
-    Post.findById(req.params.id)
-    .then(result => {
-        if(result){
-            result.plant_name = req.body.plant_name;
-            result.description = req.body.description;
-            result.price = req.body.price;
-            return result.save();
-        }
-        else{
-            console.log(err);
-            res.redirect('/');
-        }
-    })
-    .then(update => {
-        res.redirect('/dashboard');
-    })
-    .catch(err => {
-        res.redirect('/');
-    });
-});
 
 
 /////////////
@@ -410,7 +374,6 @@ app.post('/comment/:id', (req, res) => {
         else {
             console.log(err);
             res.redirect('/');
-            
         }
     })
     .then(update => {

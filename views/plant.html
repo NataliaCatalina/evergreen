@@ -12,7 +12,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
       <!-- own style -->
       <link rel="stylesheet" href="../style.css">
-      <title>Account</title>
+      <title>Plant profile</title>
     </head>
     <body>
     
@@ -28,7 +28,7 @@
               <a class="nav-link" aria-current="page" href="about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="list">List a Plant</a>
+              <a class="nav-link" href="/list">List a Plant</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="logout">Logout</a>
@@ -37,7 +37,7 @@
         </div>
       </div>
       <nav class="navbar navbar-dark">
-        <a class="navbar-brand mr-2" href="/"><img class="logoNav" src="/evergreen-logo.png" alt="vergreen logo image"></a>
+        <a class="navbar-brand mr-2" href="/public"><img class="logoNav" src="/evergreen-logo.png" alt="evergreen logo image"></a>
         <div class="text">
           {% if user %}
           <p>Hello {{user.username |e}}!</p>
@@ -62,7 +62,7 @@
             {% if user %}
             <a href="/delete/{{post._id}}" class="deleteButton"><i class="far fa-trash-alt"></i></a>
             <a href="/edit/{{post._id}}" class="editButton"><i class="far fa-edit"></i></a>
-        {% endif %}</h2>
+            {% endif %}</h2>
           <p>By <span>{{post.author |e}}</span> </p>
           {% if post.trade == "both" %} 
           <span><i class="sellIcon fa-lg fas fa-dollar-sign"></i></span><span><i class="sellIcon fa-lg fas fa-exchange-alt"></i></span>
@@ -114,10 +114,11 @@
             <p class="text-muted">{{post.comment[4] |e}}</p>
           </div>
         </div>
-
+        {% if user %}
         <div>
-          <a href="success" class="btn request-btn" type="button" id="request-btn">Request Plant</a>
+          <a href="/success" class="btn request-btn" type="button" id="request-btn">Request Plant</a>
         </div>
+        {% endif %}</h2>
         </div>
 
       </div>
