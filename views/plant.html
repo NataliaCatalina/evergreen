@@ -57,7 +57,7 @@
           <img class="card-img-right img-fluid flex-auto d-md-block image-card" src="{{post.image_url |e}}" alt="art image">
         </div>
 
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 border border-info">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
           <h2 class="mb-3"><span class="post_title">{{post.plant_name |e}}</span>
             {% if user %}
             <a href="/delete/{{post._id}}" class="deleteButton"><i class="far fa-trash-alt"></i></a>
@@ -101,10 +101,10 @@
           </div>  
         </div>  
 
-        <div class="row  border border-info mb-5">
+        <div class="row mb-5">
           <form action="/comment/{{post._id}}" method="post">
               <textarea name="comment" placeholder="Comment" id="comment"></textarea>
-              <button type="submit" class="btn submit-btn">Submit</button>
+              <button type="submit" class="d-inline-block bg-transparent sendButton"><img src="https://img.icons8.com/small/24/000000/filled-sent.png"/></button>
           </form>
           <div>
             <p class="text-muted">{{post.comment[0] |e}}</p>
@@ -114,11 +114,22 @@
             <p class="text-muted">{{post.comment[4] |e}}</p>
           </div>
         </div>
+
+        <div class="none">
+          <a href="/login" class="btn request-btn" type="button" id="request-btn">Login to Request</a>
+        </div>
+
         {% if user %}
+        <style>
+          .none {
+            display: none;
+          }
+        </style>
         <div>
           <a href="/success" class="btn request-btn" type="button" id="request-btn">Request Plant</a>
         </div>
-        {% endif %}</h2>
+        {% endif %}
+
         </div>
 
       </div>
