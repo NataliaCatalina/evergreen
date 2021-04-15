@@ -1,6 +1,6 @@
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -9,9 +9,17 @@ body {
 
 }
 
-h1, h2, h3, h4, h5, h6, label, p{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+p {
   color: #053642;
 }
+
 /*********************************** Colors*/
 
 .second-background {
@@ -26,7 +34,8 @@ h1, h2, h3, h4, h5, h6, label, p{
 
 /*********************************** NAVBAR */
 
-nav, footer {
+nav,
+footer {
   background-color: #ECF6F6;
 }
 
@@ -47,10 +56,10 @@ nav, footer {
   background-color: #053642;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
-  color:#053642 ;
+  color: #053642;
 }
 
-.header{
+.header {
   font-size: 30px;
   font-weight: 700px;
   text-align: center;
@@ -59,246 +68,265 @@ nav, footer {
 
 
 /************************************* LOG IN - SIGN UP (HAYLEY) */
-  .form-container{
-    background-color:#ECF6F6 ;
-    border-radius: 25px;
-  }
+.form-container {
+  background-color: #ECF6F6;
+  border-radius: 25px;
+}
 
-  @media only screen and (max-width: 400px) {
-    .form-container {
-      background-color: #DEEDED;
-    }
+@media only screen and (max-width: 400px) {
+  .form-container {
+    background-color: #DEEDED;
   }
+}
 
-  #username, #password, #phone, #email {
-    outline: 0;
-    border-width: 0 0 1px;
-    border-color: black;
-    fill: none;
-    background: transparent;
-    -webkit-border-radius: 0;
-    border-radius: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
+#username,
+#password,
+#phone,
+#email {
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: black;
+  fill: none;
+  background: transparent;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 
 
-  .primary-btn {
-    text-align: center; 
-    margin-top: 50px;
-    background:#236F99 ;
-    border-radius: 20px;
-    color:#DEEDED;
-    
-  }
-  
-  .secondary-btn {
-    text-align: center; 
-    margin-top: 50px;
-    background:#B4E1E2 ;
-    border-radius: 20px;
-  }
-  
+.primary-btn {
+  text-align: center;
+  margin-top: 50px;
+  background: #236F99;
+  border-radius: 20px;
+  color: #DEEDED;
+
+}
+
+.secondary-btn {
+  text-align: center;
+  margin-top: 50px;
+  background: #B4E1E2;
+  border-radius: 20px;
+}
+
 
 /************************************* MAKE A LIST (ALEX-Nat) */
 
-  /*CATEGORY*/
-  .hidden {position:absolute;visibility:hidden;opacity:0;}
-    input[type=radio] + label {
-    color: black;
-    font-style: normal;
-    border: 2px solid #77D0D6;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 15px;
-    background-color: #77D0D6;
-  }  
-  input[type=radio]:checked + label {
-    color: black;
-    font-style: normal;
-    border: 2px solid #DEFFEF;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 15px;
-    background-color: #DEFFEF;
-    }
+/*CATEGORY*/
+.hidden {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
 
-  .checkbox-round {
-    width: 1.3em;
-    height: 1.3em;
-    background-color: #77D0D6;
-    border-radius: 50%;
-    vertical-align: middle;
-    border: 1px solid #77D0D6;
-    -webkit-appearance: none;
-    outline: none;
-    cursor: pointer;
-  } 
+input[type=radio]+label {
+  color: black;
+  font-style: normal;
+  border: 2px solid #77D0D6;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 15px;
+  background-color: #77D0D6;
+}
 
-  .dropbtn {
-    background-color: #F35B54;
-    color: white;
-    font-size: 16px;
-    border-width: 0 0 1px;
-    border-radius: 15px;
-    width: 80px;
-    height: 50px;
-    } 
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
+input[type=radio]:checked+label {
+  color: black;
+  font-style: normal;
+  border: 2px solid #DEFFEF;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 15px;
+  background-color: #DEFFEF;
+}
 
-  .custom-select {
-    background: #F35B54;
-    border-width: 0 0 1px;
-    border-radius: 15px;
-    color: white;
-    font-size: 16px;
-    width: 80px;
-    height: 50px;
-  }
+.checkbox-round {
+  width: 1.3em;
+  height: 1.3em;
+  background-color: #77D0D6;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #77D0D6;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
 
-  select {
-    font-family: 'FontAwesome', 'Second Font name'
-    }
+.dropbtn {
+  background-color: #F35B54;
+  color: white;
+  font-size: 16px;
+  border-width: 0 0 1px;
+  border-radius: 15px;
+  width: 80px;
+  height: 50px;
+}
 
-    .newIdea {
-      background: #F35B54;
-    border-width: 0 0 1px;
-    border-radius: 15px;
-    color: white;
-    font-size: 16px;
-    width: 80px;
-    height: 50px;
-    }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-  
-  .checkbox-round:checked {
-    background-color: #DEFFEF;
-  }
+.custom-select {
+  background: #F35B54;
+  border-width: 0 0 1px;
+  border-radius: 15px;
+  color: white;
+  font-size: 16px;
+  width: 80px;
+  height: 50px;
+}
 
-  #plant_name, #description, #price, #image_url {
-    outline: 0;
-    border-width: 0 0 1px;
-    border-color: black;
-    fill: none;
-    background: transparent;
-    -webkit-border-radius: 0;
-    border-radius: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
+select {
+  font-family: 'FontAwesome', 'Second Font name'
+}
 
-  
+.newIdea {
+  background: #F35B54;
+  border-width: 0 0 1px;
+  border-radius: 15px;
+  color: white;
+  font-size: 16px;
+  width: 80px;
+  height: 50px;
+}
+
+
+.checkbox-round:checked {
+  background-color: #DEFFEF;
+}
+
+#plant_name,
+#description,
+#price,
+#image_url {
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: black;
+  fill: none;
+  background: transparent;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+.submit-btn {
+  text-align: center;
+  margin-top: 3em;
+  margin-left: 3em;
+  margin-right: 3em;
+  background: #236F99;
+  border-radius: 20px;
+  color: #DEEDED;
+  float: right;
+}
+
+.insert_post input[type='text'],
+.insert_post textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.list-control {
+  border-radius: 15px;
+  padding: 50px;
+}
+
+.careHeading {
+  margin-top: 50px;
+}
+
+.categoryHeading {
+  margin-top: 150px;
+}
+
+.cancelButton {
+  color: #053642;
+  text-decoration: none;
+  float: right;
+  margin-top: 3em;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+.cancelButton:hover {
+  cursor: pointer;
+  color: #053642;
+  text-decoration: none;
+
+}
+
+.tradebtns {
+  margin-top: 50px;
+}
+
+@media only screen and (max-width: 400px) {
   .submit-btn {
-    text-align: center; 
-    margin-top: 3em;
-    margin-left: 3em;
-    margin-right: 3em;
-    background:#236F99 ;
-    border-radius: 20px;
-    color:#DEEDED;
-    float: right;
-  }
-
-  .insert_post input[type='text'],
-  .insert_post textarea{
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      font-size: 16px;
-      margin-top:5px;
-  } 
-
-  .list-control {
-    border-radius: 15px;
-    padding: 50px;
-  }
-  .careHeading{
-    margin-top: 50px;
-  }
-  .categoryHeading{
-    margin-top: 150px;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
   .cancelButton {
-    color: #053642;
-    text-decoration: none;
-    float: right;
-    margin-top: 3em;
-    margin-left: 3em;
-    margin-right: 3em;
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: center;
   }
+}
 
-  .cancelButton:hover {
-    cursor: pointer;
-    color:#053642; 
-    text-decoration:none; 
-
+@media only screen and (max-width: 1000px) {
+  .dropbtn {
+    width: 65px;
+    height: 41px;
   }
-
-  .tradebtns {
-    margin-top: 50px;
-  }
-
-  @media only screen and (max-width: 400px) {
-    .submit-btn {
-      width: 100%;
-      margin-left: 0px;
-      margin-right: 0px;
-    }
-    .cancelButton {
-      margin-left: 0px;
-      margin-right: 0px;
-      text-align: center;
-    }
-  }
-  @media only screen and (max-width: 1000px) {
-    .dropbtn {
-      width: 65px;
-      height: 41px;
-      } 
-  }
+}
 
 /* Home page - Alex */
 
 .loginButtonHome {
   text-align: center;
   margin-top: 50px;
-  background:#236F99 ;
+  background: #236F99;
   border-radius: 20px;
-  color:#DEEDED;
+  color: #DEEDED;
   width: 80%;
   margin-left: 10%;
 }
+
 .loginButtonHome:hover {
   background-color: #236F99;
 }
 
 .signupButtonHome {
-  text-align: center; 
+  text-align: center;
   margin-top: 25px;
-  background:#236F99 ;
+  background: #236F99;
   border-radius: 20px;
-  color:#DEEDED;
+  color: #DEEDED;
   width: 80%;
   margin-left: 10%;
 }
+
 .signupButtonHome:hover {
   background-color: #236F99;
 }
 
 .justbrowsingButtonHome {
-  text-align: center; 
+  text-align: center;
   margin-top: 25px;
-  background:#236F99 ;
+  background: #236F99;
   border-radius: 20px;
-  color:#DEEDED;
+  color: #DEEDED;
   width: 80%;
   margin-left: 10%;
 }
+
 .justbrowsingButtonHome:hover {
   background-color: #236F99;
 }
@@ -334,6 +362,7 @@ nav, footer {
 .plusButton:hover {
   background-color: #236F99;
 }
+
 .plusIcon {
   margin-left: 5px;
 }
@@ -341,13 +370,14 @@ nav, footer {
 /* success page - Alex */
 
 .backToButton {
-  text-align: center; 
+  text-align: center;
   margin-top: 25px;
-  background:#236F99 ;
+  background: #236F99;
   border-radius: 20px;
-  color:#DEEDED;
+  color: #DEEDED;
   width: 150px;
 }
+
 .backToButton:hover {
   background-color: #236F99;
 }
@@ -362,6 +392,7 @@ nav, footer {
   border-radius: 15px;
   padding: 50px;
 }
+
 @media only screen and (max-width: 1024px) {
   .success-control {
     width: 60%;
@@ -369,6 +400,7 @@ nav, footer {
     padding: 50px;
   }
 }
+
 @media only screen and (max-width: 600px) {
   .success-control {
     width: 80%;
@@ -387,7 +419,7 @@ nav, footer {
   padding-right: 10px;
   border-radius: 15px;
   background-color: #77D0D6;
-}  
+}
 
 .careIconsDiv {
   position: relative;
@@ -423,13 +455,13 @@ nav, footer {
 }
 
 .request-btn {
-  text-align: center; 
+  text-align: center;
   margin-top: 3em;
   margin-left: 3em;
   margin-right: 3em;
-  background:#236F99 ;
+  background: #236F99;
   border-radius: 20px;
-  color:#DEEDED;
+  color: #DEEDED;
   float: left;
 }
 

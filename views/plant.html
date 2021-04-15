@@ -1,155 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- bootstrap -->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-      <!-- google font -->
-      <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
-      <!-- Fontawesome icons -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-      <!-- own style -->
-      <link rel="stylesheet" href="../style.css">
-      <title>Plant profile</title>
-    </head>
 
-    <body>
-    
-      <!-- NAV -->
-      <div class="pos-f-t">
-        <div class="collapse" id="navbarToggleExternalContent">
-          <div class="p-4">
-            <ul class="navbar-nav me-auto mb-1">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/list">List a Plant</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="logout">Logout</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <nav class="navbar navbar-dark">
-          <a class="navbar-brand mr-2" href="/dashboard"><img class="logoNav" src="/evergreen-logo.png" alt="evergreen logo image"></a>
-          <div class="text">
-            {% if user %}
-            <p>Hello {{user.username |e}}!</p>
-            {% endif %}
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars ml-2"></i>
-          </button>
-        </nav>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Fontawesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+  <!-- own style -->
+  <link rel="stylesheet" href="../style.css">
+  <title>Plant profile</title>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="p-4">
+        <ul class="navbar-nav me-auto mb-1">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/list">List a Plant</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <nav class="navbar navbar-dark">
+      <a class="navbar-brand mr-2" href="/dashboard"><img class="logoNav" src="/evergreen-logo.png"
+          alt="evergreen logo image"></a>
+      <div class="text">
+        {% if user %}
+        <p>Hello {{user.username |e}}!</p>
+        {% endif %}
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+        aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars ml-2"></i>
+      </button>
+    </nav>
+  </div>
+
+  <!-- PLANT PROFILE -->
+  <div class="container-fluid">
+
+    <div class="row w-75 mx-auto">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <img class="card-img-right img-fluid flex-auto d-md-block image-card" src="{{post.image_url |e}}"
+          alt="art image">
       </div>
 
-      <!-- PLANT PROFILE -->
-      <div class="container-fluid">
-
-        <div class="row w-75 mx-auto">
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <img class="card-img-right img-fluid flex-auto d-md-block image-card" src="{{post.image_url |e}}" alt="art image">
-          </div>
-
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <h2 class="mb-3"><span class="post_title">{{post.plant_name |e}}</span>
-              {% if user %}
-              <a href="/delete/{{post._id}}" class="deleteButton"><i class="far fa-trash-alt"></i></a>
-              <a href="/edit/{{post._id}}" class="editButton"><i class="far fa-edit"></i></a>
-              {% endif %}</h2>
-            <p>By <span>{{post.author |e}}</span> </p>
-            {% if post.trade == "both" %} 
-            <span><i class="sellIcon fa-lg fas fa-dollar-sign"></i></span><span><i class="sellIcon fa-lg fas fa-exchange-alt"></i></span>
-            {% endif %}
-            {% if post.trade == "trade" %} 
-            <span><i class="sellIcon fa-lg fas fa-exchange-alt"></i></span>
-            {% endif %}
-            {% if post.trade == "sell" %} 
-            <span><i class="sellIcon fa-lg fas fa-dollar-sign"></i></i></span>
-            {% endif %}
-            <h2 class="d-inline-block align-middle">$<span>{{post.price |e}}</span></h2>
-            <p class="description">{{post.description |e}}</p>
-            <span class="plant-category">{{post.category |e}}</span><br>
-            <div class="careIconsDiv">  
-              <div class="careIcons text-center">  
-                <i class="fas fa-cloud-sun fa-lg"></i><br>
-                <span >{{post.lighting |e}}</span>
-              </div>  
-            </div>  
-            <div class="careIconsDiv">  
-              <div class="careIcons text-center">  
-                <i class="fas fa-tint fa-lg"></i><br>
-                <span >{{post.watering |e}}</span>
-              </div>  
-            </div>  
-            <div class="careIconsDiv">  
-              <div class="careIcons text-center">  
-                <i class="fas fa-thermometer-half fa-lg"></i><br>
-                <span >{{post.temperature |e}}</span>
-              </div>  
-            </div>  
-            <div class="careIconsDiv mb-5">  
-              <div class="careIcons text-center">  
-                <i class="fas fa-ruler fa-lg"></i><br>
-                <span >{{post.size |e}}</span>
-              </div>  
-            </div>  
-
-            <div class="row mb-5">
-              <form action="/comment/{{post._id}}" method="post">
-                  <textarea name="comment" placeholder="Comment" id="comment"></textarea>
-                  <button type="submit" class="d-inline-block bg-transparent sendButton"><img src="https://img.icons8.com/small/24/000000/filled-sent.png"/></button>
-              </form>
-              <div>
-                <p class="text-muted">{{post.comment[0] |e}}</p>
-                <p class="text-muted">{{post.comment[1] |e}}</p>
-                <p class="text-muted">{{post.comment[2] |e}}</p>
-                <p class="text-muted">{{post.comment[3] |e}}</p>
-                <p class="text-muted">{{post.comment[4] |e}}</p>
-              </div>
-            </div>
-
-            <div class="none">
-              <a href="/login" class="btn request-btn" type="button" id="request-btn">Login to Request</a>
-            </div>
-
-            {% if user %}
-            <style>
-              .none {
-                display: none;
-              }
-            </style>
-            <div>
-              <a href="/success" class="btn request-btn" type="button" id="request-btn">Request Plant</a>
-            </div>
-            {% endif %}
-
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <h2 class="mb-3"><span class="post_title">{{post.plant_name |e}}</span>
+          {% if user %}
+          <a href="/delete/{{post._id}}" class="deleteButton"><i class="far fa-trash-alt"></i></a>
+          <a href="/edit/{{post._id}}" class="editButton"><i class="far fa-edit"></i></a>
+          {% endif %}</h2>
+        <p>By <span>{{post.author |e}}</span> </p>
+        {% if post.trade == "both" %}
+        <span><i class="sellIcon fa-lg fas fa-dollar-sign"></i></span><span><i
+            class="sellIcon fa-lg fas fa-exchange-alt"></i></span>
+        {% endif %}
+        {% if post.trade == "trade" %}
+        <span><i class="sellIcon fa-lg fas fa-exchange-alt"></i></span>
+        {% endif %}
+        {% if post.trade == "sell" %}
+        <span><i class="sellIcon fa-lg fas fa-dollar-sign"></i></i></span>
+        {% endif %}
+        <h2 class="d-inline-block align-middle">$<span>{{post.price |e}}</span></h2>
+        <p class="description">{{post.description |e}}</p>
+        <span class="plant-category">{{post.category |e}}</span><br>
+        <div class="careIconsDiv">
+          <div class="careIcons text-center">
+            <i class="fas fa-cloud-sun fa-lg"></i><br>
+            <span>{{post.lighting |e}}</span>
           </div>
         </div>
+        <div class="careIconsDiv">
+          <div class="careIcons text-center">
+            <i class="fas fa-tint fa-lg"></i><br>
+            <span>{{post.watering |e}}</span>
+          </div>
+        </div>
+        <div class="careIconsDiv">
+          <div class="careIcons text-center">
+            <i class="fas fa-thermometer-half fa-lg"></i><br>
+            <span>{{post.temperature |e}}</span>
+          </div>
+        </div>
+        <div class="careIconsDiv mb-5">
+          <div class="careIcons text-center">
+            <i class="fas fa-ruler fa-lg"></i><br>
+            <span>{{post.size |e}}</span>
+          </div>
+        </div>
+
+        <div class="row mb-5">
+          <form action="/comment/{{post._id}}" method="post">
+            <textarea name="comment" placeholder="Comment" id="comment"></textarea>
+            <button type="submit" class="d-inline-block bg-transparent sendButton"><img
+                src="https://img.icons8.com/small/24/000000/filled-sent.png" /></button>
+          </form>
+          <div>
+            <p class="text-muted">{{post.comment[0] |e}}</p>
+            <p class="text-muted">{{post.comment[1] |e}}</p>
+            <p class="text-muted">{{post.comment[2] |e}}</p>
+            <p class="text-muted">{{post.comment[3] |e}}</p>
+            <p class="text-muted">{{post.comment[4] |e}}</p>
+          </div>
+        </div>
+
+        <div class="none">
+          <a href="/login" class="btn request-btn" type="button" id="request-btn">Login to Request</a>
+        </div>
+
+        {% if user %}
+        <style>
+          .none {
+            display: none;
+          }
+        </style>
+        <div>
+          <a href="/success" class="btn request-btn" type="button" id="request-btn">Request Plant</a>
+        </div>
+        {% endif %}
+
       </div>
+    </div>
+  </div>
 
-      <!-- FOOTER -->
-      <footer class="container-fluid text-light text-center mt-5 p-3" >
-        <p class="text-muted"> ©2021 Yoobee - Application Development Assignment<br>Developed by Alexander Little, Hayley Clarke and Natalia Ramirez</p>
-      </footer>
-
-
-
-    
-
+  <!-- FOOTER -->
+  <footer class="container-fluid text-light text-center mt-5 p-3">
+    <p class="text-muted"> ©2021 Yoobee - Application Development Assignment<br>Developed by Alexander Little, Hayley
+      Clarke and Natalia Ramirez</p>
+  </footer>
 
 
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"> </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="../script.js"></script>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <script src="../script.js"></script>
 </body>
 
 </html>
