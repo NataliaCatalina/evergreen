@@ -39,8 +39,9 @@
       </div>
     </div>
     <nav class="navbar navbar-dark">
-      <a class="navbar-brand mr-2" href="/public"><img class="logoNav " src="evergreen-logo.png"
-          alt="evergreen logo image"></a>
+      <a class="logoHomeActiveLink" href="/">
+        <img class="logoHomeLink" src="evergreen_blue.png" alt="evergreen logo image">
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
         aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars ml-2"></i>
@@ -50,12 +51,18 @@
 
 
   <!-- LOGING -->
-  <div class="container mt-5">
-    <div class="form-container">
-      <div class="row">
 
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-          <form action="/login" method="POST" class="form-signin m-5 p-5">
+  
+  <div class="container mt-5">
+    <div class="">
+      <div class="row">
+        <div class="d-none d-lg-block col-md-4 col-lg-5 col-xl-5 ml-5 mr-5">
+          <img class="d-none d-lg-block img-fluid plantPerson" src="plantperson.png" alt="image of person holding plant illustration">
+        </div>
+        <div class="d-none d-lg-block col-lg-1 col-xl-1"></div>
+
+        <div class="form-container col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 ml-5">
+          <form action="/login" method="POST" class="form-signin p-5">
             <h1 class="mt-5 mb-2">Login</h1>
             <p class="">Enter your username & password</p>
 
@@ -68,14 +75,14 @@
               <input type="password" id="password" class="form-control mb-5 form-input" name="password" required>
             </div>
             <div class="d-flex justify-content-left">
-              <button class="primary-btn btn submit-btn col-6">Login</button>
+              <button class="primary-btn btn submit-btn col-8">Login</button>
             </div>
           </form>
         </div>
 
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <!-- <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
           <img class="img-fluid" src="images/evergreenlogo.png" alt="tree">
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

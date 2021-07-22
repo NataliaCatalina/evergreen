@@ -34,7 +34,10 @@ p {
 
 /*********************************** NAVBAR */
 
-nav,
+nav {
+  background-color: #DEEDED;
+}
+
 footer {
   background-color: #ECF6F6;
 }
@@ -212,6 +215,11 @@ select {
   box-shadow: none;
 }
 
+.plantPerson {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
 
 .submit-btn {
   text-align: center;
@@ -236,6 +244,10 @@ select {
 .list-control {
   border-radius: 15px;
   padding: 50px;
+}
+
+.nav-link {
+  color: black;
 }
 
 .careHeading {
@@ -298,6 +310,24 @@ select {
   width: 80%;
   margin-left: 10%;
 }
+
+.logoHomeLink {
+  width: 200px;
+  height: auto;
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+.logoDashboardLink {
+  width: 200px;
+  height: auto;
+  margin-top: 35px;
+  margin-left: 20px;
+}
+
+/* .logoHomeLink:hover {
+  cursor: pointer;
+} */
 
 .loginButtonHome:hover {
   background-color: #236F99;
